@@ -329,11 +329,9 @@ func _normal_attack(normal_damage) -> void:
 
 	var random_normal_damage = randi_range(normal_damage - 10, normal_damage + 10)
 
-	# Броня врага
 	var enemy_defense = CombatState.current_enemy.get("defense", 1.0)
 	random_normal_damage = round(random_normal_damage * enemy_defense)
 
-	# --- КРИТ ИГРОКА ---
 	var local_crit_chance = randi_range(1, 100)
 
 	CombatState.pop_in(info_all)
@@ -494,7 +492,7 @@ func _enemy_turn():
 		CombatState.mana_player = clamp(CombatState.mana_player, 0, CombatState.mana_player_max)
 		return
 
-	if CombatState.mana_debuff_turns > 0 and randi_range(1, 100) <= 100: #не работает проверка, почини
+	if CombatState.debuff_turns <= 0 and randi_range(1, 100) <= 100: 
 		var abilities = CombatState.current_enemy.get("abilities", [])
 	
 		if not abilities.is_empty():
@@ -506,7 +504,7 @@ func _enemy_turn():
 		SFXplayer.pitch_scale = randf_range(0.9, 1.1)
 		SFXplayer.play()
 		info.visible = true
-		info_text.text = "наложили ужас"
+		info_text.text = CombatState.debuff_description
 		await get_tree().create_timer(1.5).timeout
 
 		CombatState.choise_visibility = false
@@ -621,7 +619,6 @@ func _on_witchcraft_pressed():
 	SFXplayer.pitch_scale = randf_range(0.9, 1.1)
 	SFXplayer.play()
 	CombatState.pop_in(witchcraft_choice)
-	await get_tree().create_timer(0.1).timeout
 	info.visible = false
 	coolassbg.visible = true
 

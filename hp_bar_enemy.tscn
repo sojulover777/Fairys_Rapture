@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://b6ay4e0wvge27"]
+
+[ext_resource type="Script" uid="uid://bf3tv2nwgwepn" path="res://hp_bar_enemy.gd" id="1_75bdp"]
+[ext_resource type="Texture2D" uid="uid://kr6porplyi5o" path="res://sprites/gui/new_hp_bg.png" id="1_nl5b3"]
+[ext_resource type="Texture2D" uid="uid://bmciawpmpm0br" path="res://sprites/gui/Bg_bar.png" id="2_75bdp"]
+[ext_resource type="Texture2D" uid="uid://br0vyrm55f0dm" path="res://sprites/gui/Hp_bar.png" id="3_vl51w"]
+[ext_resource type="Texture2D" uid="uid://bx01kximk84eo" path="res://sprites/gui/Status.png" id="5_pkycj"]
+[ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="6_udsq6"]
+[ext_resource type="FontFile" uid="uid://dcb7uq3w08uhh" path="res://ClickClack.ttf" id="7_duff4"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bp2px"]
+polygon = PackedVector2Array(-141, -203, -141, -201.7, -157, -198.7, -157, -198, -164.6, -198, -173.6, -202, -176.2, -202, -177.3, -199.9, -148.8, -157, -149, -156.5, -149, -155.2, -159.5, -149, -161.9, -149, -170.9, -139, -172.4, -139, -176, -128.3, -176, -125.6, -168.3, -123, -166.8, -123, -162.8, -119, -163, -118.5, -163, -117.7, -168, -116.6, -168, -115.7, -176.4, -114, -178.5, -114, -191.5, -121, -196.2, -121, -203.7, -106, -205.3, -106, -206, -109.4, -206, -112.8, -223.3, -107, -224.3, -107, -233, -114, -233, -115.3, -247.6, -122, -248.8, -122, -251, -126.5, -251, -128.9, -259, -135.9, -259, -137.3, -281.5, -148, -283.2, -148, -297.2, -162, -297.9, -162, -307.8, -180, -308, -193.1, -311, -195.1, -311, -196.4, -313.6, -197.4, -324.9, -184, -326.4, -184, -330.4, -172, -331.7, -172, -334.7, -155, -336, -155, -336, -130.8, -345.7, -134, -349.1, -134, -348, -114.9, -348, -109.3, -340, -99.3, -340, -97.8, -325.5, -90, -324.4, -90, -323.6, -87.3, -325.5, -80, -327.5, -80, -322.6, -57, -323.7, -49, -325.7, -49, -323, -40, -323, -36.199997, -320.8, -34, -316.9, -34, -314, -38.399994, -307.8, -40.300003, -302.4, -38, -300.9, -38, -284.8, -23, -278.5, -4, -282, 9.800003, -282, 12.399994, -300, 46.5, -300, 48.100006, -306.7, 54, -310.8, 54, -309, 59.299988, -309, 61.200012, -299.5, 66, -292, 77.5, -292, 84.100006, -308, 104, -309.4, 104, -312.4, 113, -314.2, 113, -313, 125.20001, -313, 128.70001, -304, 141, -304, 144.29999, -308, 149.29999, -308, 151, -319.7, 160, -322.3, 160, -321, 169.29999, -321, 172, -313.1, 177.9, -330.5, 188, -333.4, 188, -334.4, 190.70001, -326, 197, -326, 198.5, -312, 202.4, -312, 204.20001, -287.8, 202, -283.5, 202, -273, 196.20001, -263.8, 195, -260.4, 195, -241.3, 182.20001, -236.1, 183, -230.8, 183, -229.7, 180.9, -235.1, 172.29999, -233.6, 170.29999, -225.2, 172, -206.7, 172, -202.7, 175, -196.3, 189, -189.8, 189, -184.6, 188, -180.4, 188, -158, 174.1, -129, 168.70001, -129, 168, -59, 169, -53.299988, 169, -33.299988, 175, -32.5, 175, -30, 185, -30, 188.70001, -25, 195, -21.799988, 195, -15, 181.5, -15, 180, -2.5, 172.4, 11.799988, 176, 13.100006, 176, 26.100006, 190, 30.399994, 190, 32.399994, 185, 34.200012, 185, 33, 173.79999, 33, 171.1, 40, 167.20001, 101.100006, 165, 123.600006, 165, 141, 168.6, 141, 169.20001, 143, 170.29999, 148.5, 167, 156.4, 167, 178, 181.1, 178, 182.4, 192.59998, 188, 195.5, 188, 200, 173.29999, 219, 162.20001, 228, 160.79999, 228, 160, 234.40002, 160, 241.40002, 165, 242.79999, 165, 243, 165.5, 243, 168.20001, 240, 171.20001, 240, 181, 250.40002, 181, 256, 185, 256, 186.6, 277.8, 192, 279.3, 192, 287, 197.1, 287, 198.5, 297, 201.4, 297, 202.70001, 304.8, 204, 314.40002, 204, 324.40002, 200, 327.7, 200, 345, 186, 345, 182.20001, 331.09998, 181, 328.7, 181, 321.09998, 174.9, 323.5, 174, 330.8, 174, 342, 163.9, 342, 160.6, 337.3, 159, 333.7, 159, 325.7, 153, 324, 153, 313, 138.29999, 320, 131.9, 336, 129.79999, 336, 125.100006, 322.09998, 112.29999, 323, 104.100006, 323, 98.600006, 311.40002, 94, 310.2, 94, 302.5, 79.600006, 306, 69.29999, 306, 67.899994, 309.7, 65, 312, 65, 321, 52.700012, 321, 49.100006, 304.7, 35, 290.2, 7, 289.5, 7, 287, -3, 287, -9.800003, 291, -22.699997, 291, -24.300003, 301, -36.300003, 301, -37.800003, 307.5, -41, 322, -41, 322, -62.600006, 326.40002, -74, 328.3, -74, 326, -91.1, 332.7, -96, 335, -96, 340, -103, 341.59998, -103, 346.5, -123, 348, -123, 348, -131.1, 336.7, -126.1, 335.3, -127.5, 336.7, -134, 338.09998, -134, 337, -151.1, 337, -155.4, 330, -173.5, 330, -175.8, 320, -185.8, 320, -187.5, 317, -188.3, 302, -162.5, 302, -160.9, 292, -151.9, 292, -151.3, 274.7, -144, 272.3, -144, 261.3, -135, 258.90002, -135, 252, -124.6, 232, -111.1, 232, -110.3, 231.5, -110, 228.40002, -110, 219.40002, -114, 212.79999, -114, 209.40002, -107.5, 203, -119.6, 203, -121.2, 200.90002, -122.3, 184.70001, -111.7, 167.40002, -118, 166.20001, -118, 166, -118.5, 166, -119.3, 173, -127.2, 173, -133.7, 169, -138.7, 169, -141, 154, -153, 165.09998, -169, 166.20001, -169, 178, -192.5, 178, -196.8, 135.1, -201, 113.600006, -201, 91.399994, -192, 89.20001, -192, 68.29999, -173, 62.299988, -173, 52.299988, -176, 49.700012, -176, 33, -187.1, 33, -188.7, 20.200012, -191, 18.899994, -191, 5.799988, -203, -1.7999878, -203, -14.799988, -190, -28.600006, -190, -40, -182, -59.399994, -174, -69.100006, -174, -88, -195.8, -88, -197.3, -97, -201.3, -97, -203)
+
+[node name="hp_bar_enemy" type="Control" unique_id=10430258]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_75bdp")
+
+[node name="Container" type="Sprite2D" parent="." unique_id=702009404]
+position = Vector2(593, 349.00003)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("1_nl5b3")
+
+[node name="Hp_delay_bar" type="TextureProgressBar" parent="." unique_id=1509379163]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 302.0
+offset_right = 985.0
+offset_bottom = 342.0
+scale = Vector2(1.075, 1.075)
+texture_under = ExtResource("2_75bdp")
+texture_progress = ExtResource("3_vl51w")
+tint_progress = Color(0.5624, 0.76, 0.7369467, 1)
+
+[node name="Hp" type="TextureProgressBar" parent="." unique_id=543895672]
+layout_mode = 0
+offset_left = 659.99994
+offset_top = 302.0
+offset_right = 986.99994
+offset_bottom = 341.0
+scale = Vector2(1.075, 1.075)
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_progress = ExtResource("3_vl51w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=59565646]
+position = Vector2(762, 403)
+scale = Vector2(1.585, 1.585)
+texture = ExtResource("5_pkycj")
+
+[node name="Label" type="Label" parent="." unique_id=1442989544]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 72.0
+offset_right = 770.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("6_udsq6")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="l" type="Label" parent="." unique_id=638397880]
+layout_mode = 0
+offset_left = 829.0
+offset_top = 252.0
+offset_right = 855.0
+offset_bottom = 313.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("7_duff4")
+theme_override_font_sizes/font_size = 40
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hp_max_text" type="Label" parent="l" unique_id=114502357]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -59.439003
+anchor_top = -6.6770005
+anchor_right = -59.439003
+anchor_bottom = -6.6770005
+offset_left = 1586.4141
+offset_top = 401.29703
+offset_right = 1683.4141
+offset_bottom = 462.29703
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_udsq6")
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="hp_text" type="Label" parent="." unique_id=1353513763]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 246.0
+offset_right = 812.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_udsq6")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=764258091]
+position = Vector2(593, 349.00003)
+scale = Vector2(1.69, 1.69)
+occluder = SubResource("OccluderPolygon2D_bp2px")

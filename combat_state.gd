@@ -30,14 +30,15 @@ var hp_player_max_base = 100
 var hp_debuff_turns = 0
 var hp_debuff_percent = 0.0
 var mana_player_max_base = 100
-var mana_debuff_turns = 0
+var debuff_turns = 0
 var mana_debuff_percent = 0.0
 
 var choise_visibility = false
 var enemy_skip_turn = false
 var is_busy = false
 
-var support_abilitie_description = "..."
+var support_abilitie_description = ""
+var debuff_description = ""
 
 var items_database = {
 	"bandage": {
@@ -51,7 +52,7 @@ var items_database = {
 		"name": "Жвачка",
 		"description": "Восстанавливает 50 EP",
 		"icon": "res://chewing_gum.png",
-		"effect": "hp_restore",
+		"effect": "mana_restore",
 		"value": 50
 	},
 }
@@ -59,13 +60,13 @@ var items_database = {
 var inventory = {}
 
 var enemy_database = {
-	"педобир": {
+	"Педотрамп": {
 		"hp": 150,
 		"max_hp": 150,
 		"attack": 20,
 		"defense": 0.75,
 		"element": 4,
-		"abilities": ["horror"],
+		"abilities": ["horror", "bleeding"],
 		"sprite": "res://sprites/enemies/pedotrump.png"}
 }
 
@@ -134,7 +135,7 @@ func _level_up() -> void:
 	_level_up_all_spells()
 
 func _vadim_stuff():
-	hp_player += 10
+	hp_player += 5
 
 func _vadim_stun():
 	enemy_skip_turn = true
@@ -147,25 +148,30 @@ func _vadim_pizduly():
 	pass
 
 func recalc_mana_max() -> void:
-	if mana_debuff_turns > 0:
+	if debuff_turns > 0:
 		mana_player_max = mana_player_max_base * ( 1.0 - mana_debuff_percent)
 	else:
 		mana_player_max = mana_player_max_base
 	mana_player = clamp(mana_player, 0, mana_player_max)
 
 func tick_mana_debuff() -> void:
-	if mana_debuff_turns > 0:
-		mana_debuff_turns -= 1
-		if mana_debuff_turns == 0:
+	if debuff_turns > 0:
+		debuff_turns -= 1
+		if debuff_turns == 0:
 			mana_debuff_percent = 0.0
 			recalc_mana_max()
 
+func tick_bleeding_debuff() -> void:
+	pass
 func horror() -> void:
-	
 	mana_debuff_percent = 0.5
-	mana_debuff_turns = 2
+	debuff_turns = 2
 	recalc_mana_max()
-	print("УЖАС! Мана сожжена на 2 хода.")
+	debuff_description = "Наложен ужас!"
+
+func bleeding() -> void:
+	debuff_description = "Наложено кровотечение!"
+	
 
 func bounce_press(button: Control):
 	button.pivot_offset = button.size / 2

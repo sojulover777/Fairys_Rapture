@@ -5,6 +5,7 @@ extends Control
 @onready var description = $item_bg/descritpion
 @onready var cancel = $Cancel_inventory
 @onready var use = $Use_inventory
+@onready var stats_text = $Stats_bg/Stats_text
 
 var item_buttons = []
 var selected_id = ""
@@ -51,6 +52,9 @@ func _update_items():
 	
 	item_buttons.clear()
 	
+	stats_text.text = "Множитель крит урона: " + str(CombatState.player_crit) + "\nФизический урон: " + str(CombatState.normal_damage) + "\nУровень: " + str(CombatState.level_player) + "\nМножитель брони: " + str(CombatState.armor_player)
+
+
 	for item_id in CombatState.inventory:
 		var item_name = CombatState.items_database[item_id]["name"]
 		var count = CombatState.inventory[item_id]

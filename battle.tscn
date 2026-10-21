@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://df3st5af81cr"]
 
+[ext_resource type="Shader" uid="uid://bk7ur80xs32hg" path="res://battle.gdshader" id="1_6ke21"]
 [ext_resource type="Script" uid="uid://b0arqqjuglw05" path="res://battle.gd" id="1_dw4jg"]
 [ext_resource type="Texture2D" uid="uid://ckmwf30ob5uxh" path="res://sprites/gui/цирк уехал, а клоуны осталтись.jpg" id="2_rggsl"]
 [ext_resource type="PackedScene" uid="uid://d00ctdyp4jmi6" path="res://krutilka.tscn" id="3_6t8i5"]
@@ -24,13 +25,21 @@
 [ext_resource type="Texture2D" uid="uid://bfd3or2yeq8mg" path="res://sprites/gui/krutilka/heart_btn_h.png" id="12_pihy1"]
 [ext_resource type="Texture2D" uid="uid://c72ghwkye18c6" path="res://sprites/gui/status_water.png" id="13_2n6th"]
 [ext_resource type="Texture2D" uid="uid://qyvb6ropvkfo" path="res://sprites/gui/krutilka/liltextbox.png" id="14_pihy1"]
+[ext_resource type="Texture2D" uid="uid://rbnxinc33ljm" path="res://vfx/circular 1 - 512x512.png" id="15_2sop1"]
 [ext_resource type="Texture2D" uid="uid://d341js16imqdx" path="res://sprites/gui/cancel.png" id="16_22sa7"]
 [ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="16_slotg"]
 [ext_resource type="Texture2D" uid="uid://ckhiw2qunouej" path="res://sprites/gui/cancel_p.png" id="17_aacmo"]
 [ext_resource type="Texture2D" uid="uid://dsxv36pf000c7" path="res://sprites/gui/cancel_h.png" id="18_rggsl"]
+[ext_resource type="PackedScene" uid="uid://b6ay4e0wvge27" path="res://hp_bar_enemy.tscn" id="21_dnb8m"]
 [ext_resource type="AudioStream" uid="uid://b6aqsivgyoqlo" path="res://music/battle_theme.ogg" id="22_fljlq"]
 [ext_resource type="PackedScene" uid="uid://co4it1tv3ov44" path="res://inventory.tscn" id="24_j128n"]
 [ext_resource type="Texture2D" uid="uid://cy30tamhitnxu" path="res://sprites/gui/frame.png" id="25_nt5qs"]
+[ext_resource type="Shader" uid="uid://c708vsncisgeh" path="res://lightning.gdshader" id="35_jw6nk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6haj"]
+shader = ExtResource("1_6ke21")
+shader_parameter/beat_speed = 2.0
+shader_parameter/flesh_color = Color(0.8, 0.1, 0.1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xyxtk"]
 animations = [{
@@ -134,7 +143,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dnb8m"]
+shader = ExtResource("35_jw6nk")
+shader_parameter/distortion_strength = 0.02
+shader_parameter/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jw6nk"]
+shader = ExtResource("35_jw6nk")
+shader_parameter/distortion_strength = 0.02
+shader_parameter/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2n6th"]
+shader = ExtResource("35_jw6nk")
+shader_parameter/distortion_strength = 0.02
+shader_parameter/speed = 2.0
+
+[sub_resource type="Environment" id="Environment_xyxtk"]
+background_mode = 3
+tonemap_mode = 4
+tonemap_exposure = 1.2
+tonemap_white = 1.25
+tonemap_agx_white = 14.54
+tonemap_agx_contrast = 1.2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.4
+glow_bloom = 0.15
+fog_light_color = Color(0.99719507, 0.50410986, 0.70917875, 1)
+fog_light_energy = 11.8
+fog_sun_scatter = 0.61
+fog_density = 0.8654
+fog_sky_affect = 0.81
+
 [node name="battle" type="Node2D" unique_id=748157830]
+material = SubResource("ShaderMaterial_w6haj")
 script = ExtResource("1_dw4jg")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1391961606]
@@ -221,10 +263,16 @@ offset_bottom = 715.0
 scale = Vector2(0.5, 0.48)
 
 [node name="status_sprite" type="AnimatedSprite2D" parent="Control/player/HpBar" unique_id=481953062]
-position = Vector2(836.0001, 443.75)
+position = Vector2(842.0002, 506.25)
 scale = Vector2(1.8, 1.8)
 sprite_frames = SubResource("SpriteFrames_xyxtk")
 animation = &"neutral"
+
+[node name="PointLight2D" type="PointLight2D" parent="Control/player/HpBar/status_sprite" unique_id=128126615]
+scale = Vector2(0.21, 0.21)
+color = Color(1, 0.57, 0.57, 1)
+energy = 0.98
+texture = ExtResource("15_2sop1")
 
 [node name="choice" parent="Control/player" unique_id=362874569 instance=ExtResource("8_lcjiy")]
 offset_left = 601.00006
@@ -239,11 +287,13 @@ scale = Vector2(0.225, 0.225)
 texture = ExtResource("6_dw4jg")
 
 [node name="enemy_hp2" type="Sprite2D" parent="Control/player" unique_id=1686675005]
+visible = false
 position = Vector2(1617, 880)
 scale = Vector2(0.28995374, 0.27734318)
 texture = ExtResource("6_pihy1")
 
 [node name="enemy_hp" type="Label" parent="Control/player" unique_id=351697417]
+visible = false
 offset_left = 1506.0
 offset_top = 834.0
 offset_right = 1743.0
@@ -263,6 +313,20 @@ offset_top = 52.00003
 offset_right = 69.0
 offset_bottom = 52.00003
 scale = Vector2(0.475, 0.475)
+
+[node name="hp_bar_enemy" parent="Control/player" unique_id=10430258 instance=ExtResource("21_dnb8m")]
+offset_left = 1320.0
+offset_top = 715.0
+offset_right = 1320.0
+offset_bottom = 715.0
+scale = Vector2(0.5, 0.48)
+
+[node name="PointLight2D" type="PointLight2D" parent="Control" unique_id=1916336905]
+position = Vector2(948.5, 906.00006)
+scale = Vector2(3.8222654, 0.7675783)
+color = Color(0.91458815, 0.7435236, 0.69835013, 1)
+energy = 1.4
+texture = ExtResource("15_2sop1")
 
 [node name="Witchcraft_choice" type="Control" parent="." unique_id=1554822219]
 visible = false
@@ -286,15 +350,6 @@ offset_left = -2395.112
 offset_top = -1411.4053
 offset_right = 2484.7253
 offset_bottom = 1698.5745
-texture = ExtResource("9_4s0ev")
-
-[node name="TextureRect" type="TextureRect" parent="Witchcraft_choice/CoolAssBG/TextureRect" unique_id=1047341795]
-modulate = Color(0.040268797, 0.040268805, 0.040268797, 1)
-layout_mode = 0
-offset_left = 14.256592
-offset_top = 8.1467285
-offset_right = 4894.0938
-offset_bottom = 3118.1265
 texture = ExtResource("9_4s0ev")
 
 [node name="liltextbox" type="Sprite2D" parent="Witchcraft_choice/CoolAssBG" unique_id=642481820]
@@ -356,6 +411,14 @@ ignore_texture_size = true
 stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="PointLight2D4" type="PointLight2D" parent="Witchcraft_choice/CoolAssBG/ready_btn" unique_id=724068754]
+position = Vector2(206.72083, 118.12634)
+scale = Vector2(0.9268394, 1.1217544)
+color = Color(0.8801643, 0.3000237, 0.4341189, 1)
+energy = 2.0
+range_item_cull_mask = 3
+texture = ExtResource("15_2sop1")
+
 [node name="krutilka2" parent="Witchcraft_choice/CoolAssBG" unique_id=1739817142 instance=ExtResource("4_dw4jg")]
 light_mask = 2
 visibility_layer = 2
@@ -389,6 +452,27 @@ texture_pressed = ExtResource("17_aacmo")
 texture_hover = ExtResource("18_rggsl")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="PointLight2D4" type="PointLight2D" parent="Witchcraft_choice/CoolAssBG" unique_id=1212912361]
+position = Vector2(11.201544, -753.5642)
+scale = Vector2(0.99048513, 0.8353489)
+color = Color(0.9406095, 0.8351556, 0.6240108, 1)
+energy = 2.0
+texture = ExtResource("15_2sop1")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Witchcraft_choice/CoolAssBG" unique_id=1924990621]
+position = Vector2(-11.201756, -334.0123)
+scale = Vector2(0.9745735, 0.79954803)
+color = Color(0.9406095, 0.8351556, 0.6240108, 1)
+energy = 2.0
+texture = ExtResource("15_2sop1")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Witchcraft_choice/CoolAssBG" unique_id=526091870]
+position = Vector2(2.0364456, 92.66799)
+scale = Vector2(1.0740199, 0.775681)
+color = Color(0.9406095, 0.8351556, 0.6240108, 1)
+energy = 2.0
+texture = ExtResource("15_2sop1")
 
 [node name="timer" type="Node2D" parent="." unique_id=1963720635]
 visible = false
@@ -467,27 +551,55 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.005, 1.005)
 
-[node name="inventory_cancel_button" type="TextureButton" parent="inventory_control/Inventory" unique_id=1127187142]
-visible = false
-custom_minimum_size = Vector2(-100, -100)
-layout_mode = 0
-offset_left = 139.0
-offset_top = 785.0
-offset_right = 264.0
-offset_bottom = 910.0
-offset_transform_scale = Vector2(0.76, 0.76)
-texture_normal = ExtResource("16_22sa7")
-texture_pressed = ExtResource("17_aacmo")
-texture_hover = ExtResource("18_rggsl")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="status_sprite_inventory" type="AnimatedSprite2D" parent="inventory_control/Inventory" unique_id=184295325]
-position = Vector2(534.32837, 328.35822)
+position = Vector2(542.2886, 365.17413)
 scale = Vector2(1.135, 1.135)
 sprite_frames = SubResource("SpriteFrames_4wl1v")
-animation = &"bile"
+animation = &"neutral"
+
+[node name="PointLight2D" type="PointLight2D" parent="inventory_control/Inventory/status_sprite_inventory" unique_id=1923574296]
+scale = Vector2(0.21, 0.21)
+color = Color(1, 0.57, 0.57, 1)
+energy = 0.98
+texture = ExtResource("15_2sop1")
+
+[node name="PointLight2D" type="PointLight2D" parent="inventory_control/Inventory" unique_id=135892835]
+material = SubResource("ShaderMaterial_dnb8m")
+position = Vector2(387.06464, 271.1443)
+scale = Vector2(1.1038556, 0.7015703)
+color = Color(0.9137255, 0.74509805, 0.69803923, 1)
+energy = 1.1
+texture = ExtResource("15_2sop1")
+
+[node name="PointLight2D3" type="PointLight2D" parent="inventory_control/Inventory" unique_id=1647850659]
+material = SubResource("ShaderMaterial_jw6nk")
+position = Vector2(1360.6963, 522.38806)
+scale = Vector2(2.1241448, 1.8734452)
+color = Color(0.9137255, 0.74509805, 0.69803923, 1)
+energy = 1.1
+texture = ExtResource("15_2sop1")
+
+[node name="PointLight2D2" type="PointLight2D" parent="inventory_control/Inventory" unique_id=396803267]
+material = SubResource("ShaderMaterial_2n6th")
+position = Vector2(391.04477, 780.0995)
+scale = Vector2(1.3603855, 0.8240049)
+color = Color(0.9137255, 0.74509805, 0.69803923, 1)
+energy = 1.1
+texture = ExtResource("15_2sop1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=163555305]
+environment = SubResource("Environment_xyxtk")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=439684170]
+rotation = 0.039711423
+color = Color(0.8537802, 0.53377706, 0.52009416, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1268213015]
+rotation = 0.19820493
+color = Color(0.8140892, 0.8839807, 0.7046045, 1)
+energy = 0.35
+shadow_enabled = true
+shadow_filter = 2
 
 [connection signal="pressed" from="Witchcraft_choice/CoolAssBG/ready_btn" to="." method="_on_ready_btn_pressed"]
 [connection signal="pressed" from="Witchcraft_choice/CoolAssBG/cancel_button" to="." method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="inventory_control/Inventory/inventory_cancel_button" to="." method="_on_inventory_cancel_button_pressed"]

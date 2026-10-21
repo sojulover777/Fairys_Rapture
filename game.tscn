@@ -9,6 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://co4it1tv3ov44" path="res://inventory.tscn" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://d4bw5d3vd5ar" path="res://sprites/gui/status_neutral.png" id="8_j5wjh"]
 
+[sub_resource type="Environment" id="Environment_j5wjh"]
+background_mode = 3
+tonemap_mode = 4
+tonemap_exposure = 1.2
+tonemap_white = 1.25
+tonemap_agx_white = 14.54
+tonemap_agx_contrast = 1.15
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.4
+glow_bloom = 0.15
+fog_light_color = Color(0.99719507, 0.50410986, 0.70917875, 1)
+fog_light_energy = 11.8
+fog_sun_scatter = 0.61
+fog_density = 0.8654
+fog_sky_affect = 0.81
+
 [node name="Node2D" type="Node2D" unique_id=2043350443]
 script = ExtResource("1_fc0e3")
 
@@ -55,3 +72,17 @@ offset_bottom = 12.0
 position = Vector2(532.9896, 328.866)
 scale = Vector2(1.135, 1.135)
 texture = ExtResource("8_j5wjh")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1607628093]
+environment = SubResource("Environment_j5wjh")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=234008144]
+rotation = 0.039711423
+color = Color(0.28338933, 0.36213705, 0.4307872, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1911175735]
+rotation = -0.499152
+color = Color(0.88892514, 0.76732916, 0.60267943, 1)
+energy = 0.83
+shadow_enabled = true
+shadow_filter = 2
