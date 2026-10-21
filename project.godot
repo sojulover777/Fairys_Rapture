@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="magical adventure in urban shitty locations (4.6)"
-run/main_scene="uid://1yvvv2v87ww6"
+run/main_scene="uid://sa08dvb6xoqb"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -33,4 +33,5 @@ window/stretch/mode="viewport"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
 viewport/hdr_2d=true

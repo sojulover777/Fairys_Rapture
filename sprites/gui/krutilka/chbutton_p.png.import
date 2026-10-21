@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvxnrsgxf6wdg"
-path="res://.godot/imported/chbutton_p.png-a9d7b33f568de7c9edc5913b73183050.ctex"
+path.s3tc="res://.godot/imported/chbutton_p.png-a9d7b33f568de7c9edc5913b73183050.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/gui/krutilka/chbutton_p.png"
-dest_files=["res://.godot/imported/chbutton_p.png-a9d7b33f568de7c9edc5913b73183050.ctex"]
+dest_files=["res://.godot/imported/chbutton_p.png-a9d7b33f568de7c9edc5913b73183050.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

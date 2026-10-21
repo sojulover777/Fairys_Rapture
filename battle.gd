@@ -6,19 +6,17 @@ extends Node2D
 @onready var choice = $Control/player/choice
 @onready var timer = $timer
 @onready var timer_label = $timer/timer_label
-@onready var enemy_hp_lvl = $Control/player/enemy_hp
-@onready var info_text = $info_all/info_bg/info
-@onready var info = $info_all/info_bg
+@onready var info_text = $CanvasGroup/info_all/info_bg/info
+@onready var info = $CanvasGroup/info_all/info_bg
 @onready var SFXplayer = $SFXplayer
 @onready var inventory = $inventory_control
 @onready var player = $Control
 @onready var level_up = $level_up
 @onready var cancel = $Witchcraft_choice/CoolAssBG/cancel_button
 @onready var witchcraft_choice = $Witchcraft_choice
-@onready var info_all = $info_all
+@onready var info_all = $CanvasGroup/info_all
 @onready var ready_btn = $Witchcraft_choice/CoolAssBG/ready_btn
 @onready var litteral_inventory = $inventory_control/Inventory
-@onready var inventory_cancel = $inventory_control/Inventory/inventory_cancel_button
 @onready var status_sprite = $Control/player/HpBar/status_sprite
 @onready var status_sprite_inventory = $inventory_control/Inventory/status_sprite_inventory
 @onready var enemy_abilities = $EnemyAbilitiesNode
@@ -114,13 +112,10 @@ func _ready():
 	status_sprite.play(status_sprite_name)
 	status_sprite_inventory.play(status_sprite_name)
 
-	$player_status.text = player_element_name
-
 	if CombatState.current_enemy.is_empty():
 		get_tree().change_scene_to_file("res://game.tscn")
 		return
 
-	_update_enemy_hp_display()
 	_update_label()
 	_update_choice_visibility()
 
@@ -164,13 +159,6 @@ func _update_choice_visibility():
 		choice.visible = false
 	else:
 		choice.visible = true
-
-
-func _update_enemy_hp_display():
-	var hp = CombatState.current_enemy["hp"]
-	var max_hp = CombatState.current_enemy["max_hp"]
-	enemy_hp_lvl.text = str(hp) + "/" + str(max_hp)
-
 
 func _update_label():
 	all_name.text = current_element_name + "+" + current_mods_name
@@ -306,7 +294,6 @@ func _on_ready_btn_pressed() -> void:
 	player_damage = 0
 	random_player_damage = 0
 
-	_update_enemy_hp_display()
 	$player_status.text = player_element_name
 	_update_label()
 
@@ -353,7 +340,6 @@ func _normal_attack(normal_damage) -> void:
 
 
 	CombatState.turn_number += 1
-	_update_enemy_hp_display()
 
 	if CombatState.current_enemy["hp"] <= 0:
 		_enemy_die()
@@ -436,7 +422,6 @@ func _support_turn():
 			CombatState.current_enemy["max_hp"]
 		)
 		info_text.text = str(CombatState.current_support["name"]) + " атаковал на " + str(support_damage)
-		_update_enemy_hp_display()
 		await get_tree().create_timer(1.0).timeout
 
 		if CombatState.current_enemy["hp"] <= 0:

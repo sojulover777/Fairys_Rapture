@@ -68,6 +68,7 @@ texture_hover = ExtResource("13_wttld")
 metadata/_edit_use_anchors_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=289224836]
+visible = false
 position = Vector2(409, 190)
 occluder = SubResource("OccluderPolygon2D_3vsoh")
 

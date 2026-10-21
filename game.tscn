@@ -61,12 +61,7 @@ offset_bottom = 1170.0
 texture = ExtResource("6_eow3j")
 
 [node name="Inventory" parent="Inventory_game" unique_id=49497546 instance=ExtResource("6_ryrav")]
-custom_minimum_size = Vector2(-100, -100)
 layout_mode = 0
-offset_left = -13.0
-offset_top = 12.0
-offset_right = -13.0
-offset_bottom = 12.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Inventory_game/Inventory" unique_id=715447160]
 position = Vector2(532.9896, 328.866)

@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/use_inventory.png-98b9bd46a6a88546bc776a62864
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

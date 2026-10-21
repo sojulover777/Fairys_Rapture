@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rct14aci2ymk"
-path="res://.godot/imported/enkephalin_mephenytoin_morphine_injection_pen.png-03782b890cb52ce5b93a38343849057e.ctex"
+path.s3tc="res://.godot/imported/enkephalin_mephenytoin_morphine_injection_pen.png-03782b890cb52ce5b93a38343849057e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/items/enkephalin_mephenytoin_morphine_injection_pen.png"
-dest_files=["res://.godot/imported/enkephalin_mephenytoin_morphine_injection_pen.png-03782b890cb52ce5b93a38343849057e.ctex"]
+dest_files=["res://.godot/imported/enkephalin_mephenytoin_morphine_injection_pen.png-03782b890cb52ce5b93a38343849057e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
