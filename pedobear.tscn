@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://i3j62g2coufa"]
+
+[ext_resource type="Script" uid="uid://kg88jy2xbxyo" path="res://pedobear.gd" id="1_ggudt"]
+
+[node name="pedobear" type="Node2D" unique_id=99932315]
+script = ExtResource("1_ggudt")

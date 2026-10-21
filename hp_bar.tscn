@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://dr5jtww4mcgfp"]
+
+[ext_resource type="Script" uid="uid://b1b3xjchjndo4" path="res://hp_bar.gd" id="1_57dvl"]
+[ext_resource type="Texture2D" uid="uid://kr6porplyi5o" path="res://sprites/gui/new_hp_bg.png" id="2_ki3j7"]
+[ext_resource type="Texture2D" uid="uid://br0vyrm55f0dm" path="res://sprites/gui/Hp_bar.png" id="3_rtsl3"]
+[ext_resource type="Texture2D" uid="uid://bmciawpmpm0br" path="res://sprites/gui/Bg_bar.png" id="4_rtsl3"]
+[ext_resource type="Texture2D" uid="uid://ctg7qf154ramq" path="res://sprites/gui/Mana_bar.png" id="5_slonv"]
+[ext_resource type="Texture2D" uid="uid://bx01kximk84eo" path="res://sprites/gui/Status.png" id="6_c4dmd"]
+[ext_resource type="FontFile" uid="uid://dcb7uq3w08uhh" path="res://ClickClack.ttf" id="8_c4dmd"]
+[ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="8_ki3j7"]
+[ext_resource type="Texture2D" uid="uid://dg33umsmrtycb" path="res://sprites/poebalo.png" id="10_yfphe"]
+
+[node name="HpBar" type="Control" unique_id=1065199482]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_57dvl")
+
+[node name="Container" type="Sprite2D" parent="." unique_id=2067894633]
+position = Vector2(593, 349.00003)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("2_ki3j7")
+
+[node name="Hp" type="TextureProgressBar" parent="." unique_id=607551682]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 277.0
+offset_right = 989.0
+offset_bottom = 316.0
+scale = Vector2(1.075, 1.075)
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = ExtResource("4_rtsl3")
+texture_progress = ExtResource("3_rtsl3")
+
+[node name="Mana" type="TextureProgressBar" parent="." unique_id=968426709]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 354.0
+offset_right = 987.0
+offset_bottom = 393.0
+scale = Vector2(1.085, 1.085)
+offset_transform_enabled = true
+texture_under = ExtResource("4_rtsl3")
+texture_progress = ExtResource("5_slonv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1170853791]
+position = Vector2(770, 367)
+scale = Vector2(1.585, 1.585)
+texture = ExtResource("6_c4dmd")
+
+[node name="Poebalo" type="Sprite2D" parent="." unique_id=988680527]
+position = Vector2(380.8047, 390)
+scale = Vector2(1.9287243, 1.9704754)
+texture = ExtResource("10_yfphe")
+
+[node name="Label" type="Label" parent="." unique_id=191525187]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 72.0
+offset_right = 770.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("8_ki3j7")
+theme_override_font_sizes/font_size = 70
+text = "Лин Лин"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="l2" type="Label" parent="." unique_id=657579575]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 329.0
+offset_right = 904.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_c4dmd")
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="mp_max_text" type="Label" parent="." unique_id=501898751]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -59.439003
+anchor_top = -6.6770005
+anchor_right = -59.439003
+anchor_bottom = -6.6770005
+offset_left = 924.0
+offset_top = 316.0
+offset_right = 989.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_ki3j7")
+theme_override_font_sizes/font_size = 35
+text = "999"
+vertical_alignment = 1
+
+[node name="l" type="Label" parent="." unique_id=244583905]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 251.0
+offset_right = 905.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_c4dmd")
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="hp_max_text" type="Label" parent="." unique_id=1094842707]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -59.439003
+anchor_top = -6.6770005
+anchor_right = -59.439003
+anchor_bottom = -6.6770005
+offset_left = 926.0
+offset_top = 238.0
+offset_right = 991.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_ki3j7")
+theme_override_font_sizes/font_size = 35
+text = "999"
+vertical_alignment = 1
+
+[node name="mp_text" type="Label" parent="." unique_id=57722576]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 318.0
+offset_right = 861.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_ki3j7")
+theme_override_font_sizes/font_size = 35
+text = "999"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="hp_text" type="Label" parent="." unique_id=505084151]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 241.0
+offset_right = 861.0
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_ki3j7")
+theme_override_font_sizes/font_size = 35
+text = "999"
+horizontal_alignment = 2
+vertical_alignment = 1

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bmh6fam10yfp8"]
+
+[ext_resource type="Script" uid="uid://bwi130p7rp7px" path="res://player.gd" id="1_2dfum"]
+[ext_resource type="Texture2D" uid="uid://cwrkqu1d0gd0p" path="res://Без названия 48_202605281956_03921.png" id="2_vx3h2"]
+[ext_resource type="Texture2D" uid="uid://hfm16t2scfxn" path="res://Без названия 48_202605282007_17951.png" id="3_fjmsa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hipt"]
+radius = 31.0
+height = 130.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a34dl"]
+radius = 32.0
+height = 132.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6h3l"]
+radius = 25.0
+height = 82.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqh5u"]
+radius = 26.0
+height = 118.0
+
+[node name="game" type="Node2D" unique_id=94510760]
+
+[node name="dummy" type="CharacterBody2D" parent="." unique_id=172372013]
+
+[node name="Sprite2D" type="Sprite2D" parent="dummy" unique_id=834083285]
+position = Vector2(617.99994, 316.00003)
+scale = Vector2(0.06835937, 0.069335975)
+texture = ExtResource("3_fjmsa")
+
+[node name="Area2D" type="Area2D" parent="dummy" unique_id=1634103021]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dummy/Area2D" unique_id=1453327913]
+position = Vector2(616.99994, 322.00003)
+shape = SubResource("CapsuleShape2D_2hipt")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dummy" unique_id=1941375100]
+position = Vector2(616.99994, 321.00003)
+shape = SubResource("CapsuleShape2D_a34dl")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=395631658]
+script = ExtResource("1_2dfum")
+
+[node name="player_sprite" type="Sprite2D" parent="player" unique_id=1570543332]
+position = Vector2(436.49997, 319.00003)
+scale = Vector2(0.07666012, 0.07226562)
+texture = ExtResource("2_vx3h2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1116122176]
+position = Vector2(434.99994, 351.00003)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("CapsuleShape2D_k6h3l")
+
+[node name="Area2D" type="Area2D" parent="player" unique_id=1007325309]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D" unique_id=545928690]
+position = Vector2(434.99994, 332.00003)
+shape = SubResource("CapsuleShape2D_hqh5u")
+debug_color = Color(0.9764706, 0, 0, 0.41960785)

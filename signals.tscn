@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1miuxyfdw5hb"]
+
+[ext_resource type="Script" uid="uid://dhwnnucv4nixp" path="res://signals.gd" id="1_c6h5h"]
+
+[node name="CombatState" type="Node2D" unique_id=334038107]
+script = ExtResource("1_c6h5h")

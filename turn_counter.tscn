@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bbqrkf0mppok3"]
+
+[ext_resource type="Script" uid="uid://cjqk8ulo3m1nl" path="res://turn_counter.gd" id="1_7suuh"]
+[ext_resource type="Texture2D" uid="uid://biub8iqirwcgi" path="res://sprites/gui/Turn_bg.png" id="1_romx4"]
+[ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="2_7suuh"]
+
+[node name="Node2D" type="Control" unique_id=246270601]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7suuh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2082775100]
+position = Vector2(173, 235)
+texture = ExtResource("1_romx4")
+
+[node name="Counter" type="Label" parent="Sprite2D" unique_id=1785684211]
+offset_left = -125.0
+offset_top = -199.0
+offset_right = 128.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.7529412, 0.6627451, 0.5882353, 1)
+theme_override_colors/font_outline_color = Color(0.003921569, 0.011764706, 0.007843138, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_7suuh")
+theme_override_font_sizes/font_size = 125
+horizontal_alignment = 1
+vertical_alignment = 1

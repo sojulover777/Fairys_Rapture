@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://df3st5af81cr"]
+
+[ext_resource type="Script" uid="uid://b0arqqjuglw05" path="res://battle.gd" id="1_dw4jg"]
+[ext_resource type="Texture2D" uid="uid://ckmwf30ob5uxh" path="res://sprites/gui/цирк уехал, а клоуны осталтись.jpg" id="2_rggsl"]
+[ext_resource type="PackedScene" uid="uid://d00ctdyp4jmi6" path="res://krutilka.tscn" id="3_6t8i5"]
+[ext_resource type="PackedScene" uid="uid://b8v8yd1wvl2d6" path="res://krutilka_2.tscn" id="4_dw4jg"]
+[ext_resource type="PackedScene" uid="uid://b24wujjcdgo3y" path="res://krutilka_3.tscn" id="5_0npn6"]
+[ext_resource type="PackedScene" uid="uid://dr5jtww4mcgfp" path="res://hp_bar.tscn" id="5_6t8i5"]
+[ext_resource type="Texture2D" uid="uid://dtbvwo612cn0o" path="res://sprites/LinLin_Fight.png" id="6_dw4jg"]
+[ext_resource type="Texture2D" uid="uid://ce0ff0c8b0l41" path="res://sprites/gui/Hp_bg.png" id="6_pihy1"]
+[ext_resource type="Texture2D" uid="uid://b1om45a3duvtd" path="res://sprites/enemies/pedotrump.png" id="7_aacmo"]
+[ext_resource type="PackedScene" uid="uid://drn8xbr3un31j" path="res://battle_choice.tscn" id="8_lcjiy"]
+[ext_resource type="PackedScene" uid="uid://bbqrkf0mppok3" path="res://turn_counter.tscn" id="8_mhv3b"]
+[ext_resource type="Texture2D" uid="uid://4y1m36nwnt2r" path="res://sprites/gui/krutilka/coolass_bg.png" id="8_sl0w2"]
+[ext_resource type="Texture2D" uid="uid://cf1sjq62h60w2" path="res://sprites/gui/bg.png" id="9_4s0ev"]
+[ext_resource type="Texture2D" uid="uid://cestwgegvqkud" path="res://sprites/gui/krutilka/heart_btn.png" id="10_elvfr"]
+[ext_resource type="Texture2D" uid="uid://b4k1dmp6v143k" path="res://sprites/gui/krutilka/heart_btn_p.png" id="11_4s0ev"]
+[ext_resource type="Texture2D" uid="uid://bfd3or2yeq8mg" path="res://sprites/gui/krutilka/heart_btn_h.png" id="12_pihy1"]
+[ext_resource type="Texture2D" uid="uid://qyvb6ropvkfo" path="res://sprites/gui/krutilka/liltextbox.png" id="14_pihy1"]
+[ext_resource type="Texture2D" uid="uid://d341js16imqdx" path="res://sprites/gui/cancel.png" id="16_22sa7"]
+[ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="16_slotg"]
+[ext_resource type="Texture2D" uid="uid://ckhiw2qunouej" path="res://sprites/gui/cancel_p.png" id="17_aacmo"]
+[ext_resource type="Texture2D" uid="uid://dsxv36pf000c7" path="res://sprites/gui/cancel_h.png" id="18_rggsl"]
+
+[node name="battle" type="Node2D" unique_id=748157830]
+script = ExtResource("1_dw4jg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1391961606]
+modulate = Color(0.22094142, 0.22094142, 0.22094142, 1)
+offset_left = -1.0
+offset_top = -619.0
+offset_right = 1923.0
+offset_bottom = 1081.0
+texture = ExtResource("2_rggsl")
+
+[node name="info" type="Label" parent="." unique_id=1075101286]
+offset_left = 805.0
+offset_top = 17.0
+offset_right = 1126.0
+offset_bottom = 83.0
+text = "v"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHpLabel" type="Label" parent="." unique_id=2064624877]
+offset_left = 1526.0
+offset_top = 833.0
+offset_right = 1697.0
+offset_bottom = 869.0
+metadata/_edit_use_anchors_ = true
+
+[node name="player_status" type="Label" parent="." unique_id=2077442843]
+offset_left = 337.0
+offset_top = 943.0
+offset_right = 483.0
+offset_bottom = 982.0
+metadata/_edit_use_anchors_ = true
+
+[node name="damage_test" type="Button" parent="." unique_id=1562491597]
+offset_left = 1642.0
+offset_top = 89.0
+offset_right = 1832.0
+offset_bottom = 205.0
+text = "нанести себе 10 урона"
+metadata/_edit_use_anchors_ = true
+
+[node name="level_up" type="Button" parent="." unique_id=1972249412]
+offset_left = 65.0
+offset_top = 632.0
+offset_right = 316.0
+offset_bottom = 682.0
+text = "левел ап"
+
+[node name="level" type="Label" parent="level_up" unique_id=1262267288]
+layout_mode = 0
+offset_top = -41.0
+offset_right = 251.0
+offset_bottom = -1.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player" type="Node2D" parent="." unique_id=114588698]
+
+[node name="HpBar" parent="player" unique_id=1404779165 instance=ExtResource("5_6t8i5")]
+position = Vector2(13.999939, 715)
+scale = Vector2(0.5, 0.48)
+
+[node name="choice" parent="player" unique_id=362874569 instance=ExtResource("8_lcjiy")]
+position = Vector2(601, 698)
+scale = Vector2(0.88501996, 0.88501996)
+
+[node name="Lin_Lin" type="Sprite2D" parent="player" unique_id=549687724]
+position = Vector2(673, 400)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("6_dw4jg")
+
+[node name="Node2D" parent="player" unique_id=1397050859 instance=ExtResource("8_mhv3b")]
+position = Vector2(69, 52.00003)
+scale = Vector2(0.475, 0.475)
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1686675005]
+position = Vector2(1617, 880)
+scale = Vector2(0.28995374, 0.27734318)
+texture = ExtResource("6_pihy1")
+
+[node name="enemy_hp" type="Label" parent="player" unique_id=351697417]
+offset_left = 1506.0
+offset_top = 834.0
+offset_right = 1743.0
+offset_bottom = 909.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=107954568]
+position = Vector2(1374, 440)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("7_aacmo")
+
+[node name="CoolAssBG" type="Sprite2D" parent="." unique_id=2114061740]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(968, 494.00003)
+scale = Vector2(0.491, 0.491)
+texture = ExtResource("8_sl0w2")
+
+[node name="TextureRect" type="TextureRect" parent="CoolAssBG" unique_id=671579821]
+modulate = Color(0.040268797, 0.040268805, 0.040268797, 1)
+offset_left = -1975.5602
+offset_top = -1014.25665
+offset_right = 1959.2667
+offset_bottom = 1207.7393
+texture = ExtResource("9_4s0ev")
+
+[node name="liltextbox" type="Sprite2D" parent="CoolAssBG" unique_id=642481820]
+position = Vector2(4.432007, 833.24115)
+scale = Vector2(0.99723, 0.99723)
+texture = ExtResource("14_pihy1")
+
+[node name="ready_btn" type="TextureButton" parent="CoolAssBG" unique_id=644836471]
+light_mask = 2
+visibility_layer = 2
+offset_left = -197.55603
+offset_top = 344.1955
+offset_right = 185.82361
+offset_bottom = 614.55566
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.055, 1.055)
+texture_normal = ExtResource("10_elvfr")
+texture_pressed = ExtResource("11_4s0ev")
+texture_hover = ExtResource("12_pihy1")
+ignore_texture_size = true
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="krutilka2" parent="CoolAssBG" unique_id=1739817142 instance=ExtResource("4_dw4jg")]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-875.7639, -541.7516)
+scale = Vector2(1.052, 1.052)
+
+[node name="krutilka" parent="CoolAssBG" unique_id=1074682822 instance=ExtResource("3_6t8i5")]
+position = Vector2(-875.7637, -963.34015)
+scale = Vector2(1.056, 1.056)
+
+[node name="krutilka3" parent="CoolAssBG" unique_id=172689009 instance=ExtResource("5_0npn6")]
+position = Vector2(-865.58044, -118.12634)
+scale = Vector2(1.05, 1.05)
+
+[node name="persize_damage" type="Label" parent="CoolAssBG" unique_id=213568301]
+anchors_preset = -1
+anchor_right = 0.6212952
+anchor_bottom = 0.19002877
+offset_left = -397.1487
+offset_top = 739.3075
+offset_right = -16.148712
+offset_bottom = 762.3075
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="result_label" type="Label" parent="CoolAssBG" unique_id=1334804682]
+anchors_preset = -1
+anchor_right = 0.45467117
+anchor_bottom = 0.1143859
+offset_left = -417.51526
+offset_top = 835.0305
+offset_right = 118.48474
+offset_bottom = 865.0305
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="cancel_button" type="TextureButton" parent="CoolAssBG" unique_id=625508746]
+offset_left = 1491.195
+offset_top = -890.02
+offset_right = 1913.1958
+offset_bottom = -498.02002
+scale = Vector2(0.67, 0.67)
+texture_normal = ExtResource("16_22sa7")
+texture_pressed = ExtResource("17_aacmo")
+texture_hover = ExtResource("18_rggsl")
+
+[node name="timer" type="Node2D" parent="." unique_id=1963720635]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="timer" unique_id=1873608899]
+modulate = Color(0.040268797, 0.040268805, 0.040268797, 1)
+offset_left = -1009.0
+offset_top = -572.0
+offset_right = 2925.8267
+offset_bottom = 1649.9958
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.49, 0.49)
+texture = ExtResource("9_4s0ev")
+
+[node name="timer_label" type="Label" parent="timer" unique_id=13971663]
+offset_left = 2.0
+offset_right = 1925.0
+offset_bottom = 1084.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 80
+theme_override_fonts/font = ExtResource("16_slotg")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=106359613]
+position = Vector2(963, 538)
+
+[node name="SFXplayer" type="AudioStreamPlayer2D" parent="." unique_id=1639881840]
+
+[connection signal="pressed" from="damage_test" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="level_up" to="." method="_on_level_up_pressed"]
+[connection signal="pressed" from="CoolAssBG/ready_btn" to="." method="_on_ready_btn_pressed"]
+[connection signal="pressed" from="CoolAssBG/cancel_button" to="." method="_on_cancel_button_pressed"]

@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://b24wujjcdgo3y"]
+
+[ext_resource type="Script" uid="uid://cgwjf1nbo8eoj" path="res://krutilka_3.gd" id="1_0t622"]
+[ext_resource type="Texture2D" uid="uid://d2lfwfi3fflbr" path="res://sprites/gui/krutilka/krutilka.png" id="2_mwxdj"]
+[ext_resource type="Texture2D" uid="uid://b5888ic5a1m6w" path="res://sprites/gui/krutilka/chbutton.png" id="3_fyqmi"]
+[ext_resource type="Texture2D" uid="uid://dvxnrsgxf6wdg" path="res://sprites/gui/krutilka/chbutton_p.png" id="4_k3a7u"]
+[ext_resource type="Texture2D" uid="uid://dkjnqumnnr7ln" path="res://sprites/gui/krutilka/chbutton_h.png" id="5_tc65h"]
+[ext_resource type="Texture2D" uid="uid://ijyk1qv4mues" path="res://sprites/gui/krutilka/water_ico.png" id="6_vivde"]
+[ext_resource type="Texture2D" uid="uid://diq28mtopb5jn" path="res://sprites/gui/krutilka/bile_ico.png" id="7_o8cco"]
+[ext_resource type="Texture2D" uid="uid://dupsljhog4nmr" path="res://sprites/gui/krutilka/blood_ico.png" id="8_en0o3"]
+[ext_resource type="Texture2D" uid="uid://dy1vddwwdoucf" path="res://sprites/gui/krutilka/metal_ico.png" id="9_ctdbo"]
+[ext_resource type="Texture2D" uid="uid://ck2tgea1n10ap" path="res://sprites/gui/krutilka/fire_ico.png" id="10_kt2sb"]
+[ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="11_qh351"]
+[ext_resource type="FontFile" uid="uid://dcb7uq3w08uhh" path="res://ClickClack.ttf" id="12_fyqmi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bb6dj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vivde")
+}],
+"loop": 1,
+"name": &"Вода",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_o8cco")
+}],
+"loop": 1,
+"name": &"Желчь",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_en0o3")
+}],
+"loop": 1,
+"name": &"Кровь",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ctdbo")
+}],
+"loop": 1,
+"name": &"Металл",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kt2sb")
+}],
+"loop": 1,
+"name": &"Огонь",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"хз",
+"speed": 5.0
+}]
+
+[node name="krutilka3" type="Control" unique_id=460519720]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0t622")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=987421813]
+position = Vector2(820, 196)
+texture = ExtResource("2_mwxdj")
+
+[node name="left_button" type="TextureButton" parent="Sprite2D" unique_id=39275631]
+offset_left = -351.0
+offset_top = -173.0
+offset_right = -130.0
+offset_bottom = 182.0
+offset_transform_scale = Vector2(2.015, 2.015)
+texture_normal = ExtResource("3_fyqmi")
+texture_pressed = ExtResource("4_k3a7u")
+texture_hover = ExtResource("5_tc65h")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="right_button" type="TextureButton" parent="Sprite2D" unique_id=1674421702]
+offset_left = 124.0
+offset_top = -169.0
+offset_right = 345.0
+offset_bottom = 186.0
+offset_transform_scale = Vector2(2.015, 2.015)
+texture_normal = ExtResource("3_fyqmi")
+texture_pressed = ExtResource("4_k3a7u")
+texture_hover = ExtResource("5_tc65h")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1227303375]
+position = Vector2(-2.0000048, -1.0000011)
+scale = Vector2(0.463, 0.45212767)
+sprite_frames = SubResource("SpriteFrames_bb6dj")
+animation = &"хз"
+
+[node name="guide" type="Label" parent="Sprite2D" unique_id=1891082040]
+offset_left = -772.0
+offset_top = -41.0
+offset_right = -355.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.82144225, 0.635762, 0.5370526, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("11_qh351")
+theme_override_font_sizes/font_size = 54
+text = "Модификатор
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mod_name" type="Label" parent="Sprite2D" unique_id=48580561]
+offset_left = 335.0
+offset_top = -138.0
+offset_right = 719.0
+offset_bottom = -77.0
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("11_qh351")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mod_description" type="Label" parent="Sprite2D/mod_name" unique_id=414648711]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 79.0
+offset_right = 401.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 17
+theme_override_fonts/font = ExtResource("12_fyqmi")
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3
+
+[connection signal="pressed" from="Sprite2D/left_button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="Sprite2D/right_button" to="." method="_on_right_button_pressed"]

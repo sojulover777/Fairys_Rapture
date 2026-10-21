@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://drn8xbr3un31j"]
+
+[ext_resource type="Script" uid="uid://c4j81w8nngkti" path="res://battle_choice.gd" id="1_3vsoh"]
+[ext_resource type="Texture2D" uid="uid://b8ikb7c8uh587" path="res://sprites/gui/Choice_bg.png" id="1_ncl38"]
+[ext_resource type="Texture2D" uid="uid://driudhkaimbnh" path="res://sprites/gui/Attack_btn.png" id="2_ncl38"]
+[ext_resource type="Texture2D" uid="uid://bc5f67ossxptu" path="res://sprites/gui/Attack_btn_p.png" id="3_2ai0y"]
+[ext_resource type="Texture2D" uid="uid://bxvdykdlmovpe" path="res://sprites/gui/Attack_btn_h.png" id="4_w5adg"]
+[ext_resource type="Texture2D" uid="uid://c5w0ge5w2i5qt" path="res://sprites/gui/Witchcraft_btn.png" id="5_bl0xo"]
+[ext_resource type="Texture2D" uid="uid://2v3paqrgy55n" path="res://sprites/gui/Witchcraft_btn_p.png" id="6_1hbau"]
+[ext_resource type="Texture2D" uid="uid://bjd54g73c8j68" path="res://sprites/gui/Witchcraft_btn_h.png" id="7_y3nir"]
+[ext_resource type="Texture2D" uid="uid://cg4xvmeorn3hj" path="res://sprites/gui/Items_btn.png" id="8_wttld"]
+[ext_resource type="Texture2D" uid="uid://cp02luwe30bxn" path="res://sprites/gui/Items_btn_h.png" id="8_y3nir"]
+[ext_resource type="Texture2D" uid="uid://b6oa2hpfddrt8" path="res://sprites/gui/Items_btn_p.png" id="9_yhjf4"]
+[ext_resource type="Texture2D" uid="uid://crcd8t1jaf04p" path="res://sprites/gui/Aegis_btn.png" id="11_3vsoh"]
+[ext_resource type="Texture2D" uid="uid://dfkk4nnycn5gv" path="res://sprites/gui/Aegis_btn_p.png" id="13_mp4xx"]
+[ext_resource type="Texture2D" uid="uid://et5hhqhuyll7" path="res://sprites/gui/Aegis_btn_h.png" id="13_wttld"]
+
+[node name="choice" type="Control" unique_id=740612607]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3vsoh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1056223036]
+position = Vector2(409, 190)
+texture = ExtResource("1_ncl38")
+
+[node name="Attack" type="TextureButton" parent="Sprite2D" unique_id=41941595]
+offset_left = -328.0
+offset_top = -73.0
+offset_right = -13.0
+offset_bottom = 24.0
+texture_normal = ExtResource("2_ncl38")
+texture_pressed = ExtResource("3_2ai0y")
+texture_hover = ExtResource("4_w5adg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Witchcraft" type="TextureButton" parent="Sprite2D" unique_id=824948220]
+offset_left = 10.0
+offset_top = -71.0
+offset_right = 326.0
+offset_bottom = 24.0
+texture_normal = ExtResource("5_bl0xo")
+texture_pressed = ExtResource("6_1hbau")
+texture_hover = ExtResource("7_y3nir")
+metadata/_edit_use_anchors_ = true
+
+[node name="Items" type="TextureButton" parent="Sprite2D" unique_id=1640361238]
+offset_left = -318.0
+offset_top = 39.0
+offset_right = -11.0
+offset_bottom = 112.0
+texture_normal = ExtResource("8_wttld")
+texture_pressed = ExtResource("9_yhjf4")
+texture_hover = ExtResource("8_y3nir")
+metadata/_edit_use_anchors_ = true
+
+[node name="Defense" type="TextureButton" parent="Sprite2D" unique_id=697660244]
+offset_left = 11.0
+offset_top = 38.0
+offset_right = 317.0
+offset_bottom = 109.0
+texture_normal = ExtResource("11_3vsoh")
+texture_pressed = ExtResource("13_mp4xx")
+texture_hover = ExtResource("13_wttld")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Sprite2D/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Sprite2D/Witchcraft" to="." method="_on_witchcraft_pressed"]
+[connection signal="pressed" from="Sprite2D/Items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="Sprite2D/Defense" to="." method="_on_defense_pressed"]
