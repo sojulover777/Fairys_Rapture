@@ -35,6 +35,7 @@ func _use_item(item_id: String, count: int = 1):
 			CombatState.mana_player += 25
 			CombatState.mana_player = clamp(CombatState.mana_player, 0, CombatState.mana_player_max)
 	
+	CombatState.stress_status_changer()
 	CombatState.inventory[item_id] -= count
 	if CombatState.inventory[item_id] <= 0:
 		CombatState.inventory.erase(item_id)

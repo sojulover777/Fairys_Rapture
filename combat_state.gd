@@ -32,6 +32,9 @@ var hp_debuff_percent = 0.0
 var mana_player_max_base = 100
 var debuff_turns = 0
 var mana_debuff_percent = 0.0
+var current_debuff = ""
+var stress = "stress_0"
+var stress_damage_mod = 1.0
 
 var choise_visibility = false
 var enemy_skip_turn = false
@@ -61,9 +64,9 @@ var inventory = {}
 
 var enemy_database = {
 	"Педотрамп": {
-		"hp": 150,
-		"max_hp": 150,
-		"attack": 20,
+		"hp": 180,
+		"max_hp": 180,
+		"attack": 30,
 		"defense": 0.75,
 		"element": 4,
 		"abilities": ["horror", "bleeding"],
@@ -135,7 +138,7 @@ func _level_up() -> void:
 	_level_up_all_spells()
 
 func _vadim_stuff():
-	hp_player += 5
+	mana_player += 1
 
 func _vadim_stun():
 	enemy_skip_turn = true
@@ -154,24 +157,47 @@ func recalc_mana_max() -> void:
 		mana_player_max = mana_player_max_base
 	mana_player = clamp(mana_player, 0, mana_player_max)
 
-func tick_mana_debuff() -> void:
+func tick_debuff() -> void:
 	if debuff_turns > 0:
 		debuff_turns -= 1
+		match current_debuff:
+			"horror":
+				recalc_mana_max()
+			"bleeding":
+				bleeding_stuff()
 		if debuff_turns == 0:
 			mana_debuff_percent = 0.0
 			recalc_mana_max()
+			current_debuff = ""
 
-func tick_bleeding_debuff() -> void:
-	pass
 func horror() -> void:
+	current_debuff = "horror"
 	mana_debuff_percent = 0.5
 	debuff_turns = 2
 	recalc_mana_max()
 	debuff_description = "Наложен ужас!"
 
 func bleeding() -> void:
+	current_debuff = "bleeding"
 	debuff_description = "Наложено кровотечение!"
+	debuff_turns = 2
 	
+func bleeding_stuff():
+	hp_player -= randi_range(15,20)
+
+func stress_status_changer() -> void:
+	if CombatState.hp_player <= 25:
+		CombatState.stress = "stress_4"
+		stress_damage_mod = 1.3
+	elif CombatState.hp_player <= 60:
+		CombatState.stress = "stress_3"
+		stress_damage_mod = 1.2
+	elif CombatState.hp_player < 99:
+		CombatState.stress = "stress_2"
+		stress_damage_mod = 1.1
+	else:
+		CombatState.stress = "stress_1"
+		stress_damage_mod = 0.95
 
 func bounce_press(button: Control):
 	button.pivot_offset = button.size / 2

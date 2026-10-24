@@ -11,16 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://dtbvwo612cn0o" path="res://sprites/LinLin_Fight.png" id="6_dw4jg"]
 [ext_resource type="Texture2D" uid="uid://ce0ff0c8b0l41" path="res://sprites/gui/Hp_bg.png" id="6_pihy1"]
 [ext_resource type="Texture2D" uid="uid://b1om45a3duvtd" path="res://sprites/enemies/pedotrump.png" id="7_aacmo"]
+[ext_resource type="Texture2D" uid="uid://i0n1bhgjje8s" path="res://sprites/idle1.png" id="8_bqoqy"]
 [ext_resource type="PackedScene" uid="uid://drn8xbr3un31j" path="res://battle_choice.tscn" id="8_lcjiy"]
 [ext_resource type="PackedScene" uid="uid://bbqrkf0mppok3" path="res://turn_counter.tscn" id="8_mhv3b"]
 [ext_resource type="Texture2D" uid="uid://4y1m36nwnt2r" path="res://sprites/gui/krutilka/coolass_bg.png" id="8_sl0w2"]
 [ext_resource type="Texture2D" uid="uid://d14wgoyvd16fh" path="res://sprites/gui/status_bile.png" id="8_uefs0"]
 [ext_resource type="Texture2D" uid="uid://cf1sjq62h60w2" path="res://sprites/gui/bg.png" id="9_4s0ev"]
 [ext_resource type="Texture2D" uid="uid://cfqegojufbbpi" path="res://sprites/gui/status_blood.png" id="9_6ke21"]
+[ext_resource type="Texture2D" uid="uid://b0080lx0igws6" path="res://sprites/idle2.png" id="9_ptuo3"]
 [ext_resource type="Texture2D" uid="uid://d4bw5d3vd5ar" path="res://sprites/gui/status_neutral.png" id="10_2sop1"]
 [ext_resource type="Texture2D" uid="uid://cestwgegvqkud" path="res://sprites/gui/krutilka/heart_btn.png" id="10_elvfr"]
+[ext_resource type="Texture2D" uid="uid://c4u0vdr073p83" path="res://sprites/idle3.png" id="10_mrqp6"]
 [ext_resource type="Texture2D" uid="uid://b4k1dmp6v143k" path="res://sprites/gui/krutilka/heart_btn_p.png" id="11_4s0ev"]
 [ext_resource type="Texture2D" uid="uid://cksgecekyak8e" path="res://sprites/gui/status_fire.png" id="11_dnb8m"]
+[ext_resource type="Texture2D" uid="uid://bl4k17kndfqc8" path="res://sprites/idle4.png" id="11_goa8d"]
 [ext_resource type="Texture2D" uid="uid://ca0imrpdweuej" path="res://sprites/gui/status_metal.png" id="12_jw6nk"]
 [ext_resource type="Texture2D" uid="uid://bfd3or2yeq8mg" path="res://sprites/gui/krutilka/heart_btn_h.png" id="12_pihy1"]
 [ext_resource type="Texture2D" uid="uid://c72ghwkye18c6" path="res://sprites/gui/status_water.png" id="13_2n6th"]
@@ -38,6 +42,26 @@
 shader = ExtResource("1_6ke21")
 shader_parameter/beat_speed = 2.0
 shader_parameter/flesh_color = Color(0.8, 0.1, 0.1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0wcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bqoqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ptuo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mrqp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_goa8d")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 4.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xyxtk"]
 animations = [{
@@ -209,6 +233,14 @@ position = Vector2(300, 619)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("4_s5g7e")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/player" unique_id=2097518023]
+position = Vector2(717, 453)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_f0wcl")
+animation = &"idle"
+frame = 2
+frame_progress = 0.30200183
+
 [node name="HpBar" parent="Control/player" unique_id=1404779165 instance=ExtResource("5_6t8i5")]
 offset_left = 13.999939
 offset_top = 715.0
@@ -230,6 +262,7 @@ offset_bottom = 706.0
 scale = Vector2(0.88501996, 0.88501996)
 
 [node name="Lin_Lin" type="Sprite2D" parent="Control/player" unique_id=549687724]
+visible = false
 position = Vector2(673, 400)
 scale = Vector2(0.225, 0.225)
 texture = ExtResource("6_dw4jg")
@@ -314,25 +347,6 @@ theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("16_slotg")
 theme_override_font_sizes/font_size = 60
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="result_label" type="Label" parent="Witchcraft_choice/CoolAssBG/liltextbox" unique_id=1334804682]
-visible = false
-anchors_preset = -1
-anchor_top = 0.14354943
-anchor_right = 0.2659101
-anchor_bottom = 0.22286312
-offset_left = -423.11926
-offset_top = 1.7943115
-offset_right = 112.8808
-offset_bottom = 31.794327
-theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("16_slotg")
-theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

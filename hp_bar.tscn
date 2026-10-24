@@ -6,9 +6,47 @@
 [ext_resource type="Texture2D" uid="uid://bmciawpmpm0br" path="res://sprites/gui/Bg_bar.png" id="4_rtsl3"]
 [ext_resource type="Texture2D" uid="uid://ctg7qf154ramq" path="res://sprites/gui/Mana_bar.png" id="5_slonv"]
 [ext_resource type="Texture2D" uid="uid://bx01kximk84eo" path="res://sprites/gui/Status.png" id="6_c4dmd"]
+[ext_resource type="Texture2D" uid="uid://x8oevxbobmb5" path="res://sprites/stress_1.png" id="7_2bfj4"]
 [ext_resource type="FontFile" uid="uid://dcb7uq3w08uhh" path="res://ClickClack.ttf" id="8_c4dmd"]
 [ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="8_ki3j7"]
-[ext_resource type="Texture2D" uid="uid://dg33umsmrtycb" path="res://sprites/poebalo.png" id="10_yfphe"]
+[ext_resource type="Texture2D" uid="uid://rckk22bhc7uf" path="res://sprites/stress_2.png" id="8_xct3i"]
+[ext_resource type="Texture2D" uid="uid://db5664bbnkoty" path="res://sprites/stress_3.png" id="9_l7dwx"]
+[ext_resource type="Texture2D" uid="uid://c54ajg0emtnq1" path="res://sprites/stress_4.png" id="10_yyubu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyxtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2bfj4")
+}],
+"loop": 1,
+"name": &"stress_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xct3i")
+}],
+"loop": 1,
+"name": &"stress_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_l7dwx")
+}],
+"loop": 1,
+"name": &"stress_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yyubu")
+}],
+"loop": 1,
+"name": &"stress_4",
+"speed": 5.0
+}]
 
 [node name="HpBar" type="Control" unique_id=1065199482]
 layout_mode = 3
@@ -70,10 +108,11 @@ position = Vector2(769.6525, 426.51752)
 scale = Vector2(1.585, 1.585)
 texture = ExtResource("6_c4dmd")
 
-[node name="Poebalo" type="Sprite2D" parent="." unique_id=988680527]
-position = Vector2(380.8047, 390)
-scale = Vector2(1.9287243, 1.9704754)
-texture = ExtResource("10_yfphe")
+[node name="Poebalo" type="AnimatedSprite2D" parent="." unique_id=212173105]
+position = Vector2(372, 419)
+scale = Vector2(0.229, 0.231)
+sprite_frames = SubResource("SpriteFrames_xyxtk")
+animation = &"stress_0"
 
 [node name="Label" type="Label" parent="." unique_id=191525187]
 layout_mode = 0
