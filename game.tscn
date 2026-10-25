@@ -47,6 +47,6 @@ texture = ExtResource("6_eow3j")
 layout_mode = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Inventory_game/Inventory" unique_id=715447160]
-position = Vector2(532.9896, 328.866)
+position = Vector2(529.8969, 364.9485)
 scale = Vector2(1.135, 1.135)
 texture = ExtResource("8_j5wjh")

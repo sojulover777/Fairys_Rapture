@@ -20,7 +20,7 @@ animations = [{
 "texture": ExtResource("7_2bfj4")
 }],
 "loop": 1,
-"name": &"stress_0",
+"name": &"stress_1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -112,7 +112,7 @@ texture = ExtResource("6_c4dmd")
 position = Vector2(372, 419)
 scale = Vector2(0.229, 0.231)
 sprite_frames = SubResource("SpriteFrames_xyxtk")
-animation = &"stress_0"
+animation = &"stress_1"
 
 [node name="Label" type="Label" parent="." unique_id=191525187]
 layout_mode = 0

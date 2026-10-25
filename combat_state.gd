@@ -20,9 +20,9 @@ var mana_player = 80
 var hp_player_max = 100
 var mana_player_max = 100
 var normal_damage = 20
-var player_crit = 1.5
-var crit_chance_player = 15
-var enemy_crit = 1.4
+var player_crit = 1.25
+var crit_chance_player = 10
+var enemy_crit = 1.15
 var crit_chance_enemy = 10
 var player_element = 0
 var enemy_element = 0
@@ -66,9 +66,9 @@ var enemy_database = {
 	"Педотрамп": {
 		"hp": 180,
 		"max_hp": 180,
-		"attack": 30,
+		"attack": 15,
 		"defense": 0.75,
-		"element": 4,
+		"element": [3,4],
 		"abilities": ["horror", "bleeding"],
 		"sprite": "res://sprites/enemies/pedotrump.png"}
 }
@@ -114,8 +114,8 @@ func load_support(support_name: String):
 var spell_stats = {
 	"Надрез":  {"damage": 25, "cost": 15},
 	"Догма":   {"damage": 35, "cost": 25},
-	"Клевета": {"damage": 50, "cost": 35},
-	"Вердикт": {"damage": 70, "cost": 50}
+	"Клевета": {"damage": 40, "cost": 35},
+	"Вердикт": {"damage": 65, "cost": 50}
 }
 
 func _level_up_all_spells(damage_percent: float = 0.3, cost_percent: float = 0.3):
@@ -172,7 +172,7 @@ func tick_debuff() -> void:
 
 func horror() -> void:
 	current_debuff = "horror"
-	mana_debuff_percent = 0.5
+	mana_debuff_percent = 0.4
 	debuff_turns = 2
 	recalc_mana_max()
 	debuff_description = "Наложен ужас!"
@@ -183,21 +183,21 @@ func bleeding() -> void:
 	debuff_turns = 2
 	
 func bleeding_stuff():
-	hp_player -= randi_range(15,20)
+	hp_player -= randi_range(10,15)
 
 func stress_status_changer() -> void:
-	if CombatState.hp_player <= 25:
-		CombatState.stress = "stress_4"
-		stress_damage_mod = 1.3
-	elif CombatState.hp_player <= 60:
-		CombatState.stress = "stress_3"
-		stress_damage_mod = 1.2
-	elif CombatState.hp_player < 99:
-		CombatState.stress = "stress_2"
+	if hp_player <= 25:
+		stress = "stress_4"
+		stress_damage_mod = 1.4
+	elif hp_player <= 60:
+		stress = "stress_3"
 		stress_damage_mod = 1.1
+	elif hp_player < 99:
+		stress = "stress_2"
+		stress_damage_mod = 1
 	else:
-		CombatState.stress = "stress_1"
-		stress_damage_mod = 0.95
+		stress = "stress_1"
+		stress_damage_mod = 0.85
 
 func bounce_press(button: Control):
 	button.pivot_offset = button.size / 2

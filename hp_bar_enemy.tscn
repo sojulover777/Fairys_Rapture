@@ -7,6 +7,63 @@
 [ext_resource type="Texture2D" uid="uid://bx01kximk84eo" path="res://sprites/gui/Status.png" id="5_pkycj"]
 [ext_resource type="FontFile" uid="uid://x48rc73a0nrq" path="res://18365.ttf" id="6_udsq6"]
 [ext_resource type="FontFile" uid="uid://dcb7uq3w08uhh" path="res://ClickClack.ttf" id="7_duff4"]
+[ext_resource type="Texture2D" uid="uid://d14wgoyvd16fh" path="res://sprites/gui/status_bile.png" id="8_duff4"]
+[ext_resource type="Texture2D" uid="uid://cfqegojufbbpi" path="res://sprites/gui/status_blood.png" id="9_bp2px"]
+[ext_resource type="Texture2D" uid="uid://cksgecekyak8e" path="res://sprites/gui/status_fire.png" id="10_5d3gg"]
+[ext_resource type="Texture2D" uid="uid://ca0imrpdweuej" path="res://sprites/gui/status_metal.png" id="11_xrhny"]
+[ext_resource type="Texture2D" uid="uid://d4bw5d3vd5ar" path="res://sprites/gui/status_neutral.png" id="12_ffik3"]
+[ext_resource type="Texture2D" uid="uid://c72ghwkye18c6" path="res://sprites/gui/status_water.png" id="13_7gqea"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8aa6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_duff4")
+}],
+"loop": 1,
+"name": &"bile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bp2px")
+}],
+"loop": 1,
+"name": &"blood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5d3gg")
+}],
+"loop": 1,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_xrhny")
+}],
+"loop": 1,
+"name": &"metal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ffik3")
+}],
+"loop": 1,
+"name": &"neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_7gqea")
+}],
+"loop": 1,
+"name": &"water",
+"speed": 5.0
+}]
 
 [node name="hp_bar_enemy" type="Control" unique_id=10430258]
 layout_mode = 3
@@ -111,3 +168,9 @@ theme_override_fonts/font = ExtResource("6_udsq6")
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="status_sprite_enemy" type="AnimatedSprite2D" parent="." unique_id=959595185]
+position = Vector2(827, 481.99997)
+scale = Vector2(1.805, 1.805)
+sprite_frames = SubResource("SpriteFrames_8aa6c")
+animation = &"neutral"
