@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dhcxfcsojunt8"]
-
-[ext_resource type="Script" uid="uid://cnkhnxi1ewlob" path="res://combat_state.gd" id="1_ooobc"]
-
-[node name="CombatState" type="Node2D" unique_id=13859817]
-script = ExtResource("1_ooobc")

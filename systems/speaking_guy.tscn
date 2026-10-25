@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://fd0phou12nkh"]
+
+[ext_resource type="Texture2D" uid="uid://hfm16t2scfxn" path="res://old sprites/Без названия 48_202605282007_17951.png" id="1_cfp6e"]
+[ext_resource type="Script" uid="uid://dol5ektxeuact" path="res://characters/speaking_guy.gd" id="1_r20mc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r20mc"]
+radius = 30.0
+height = 260.0
+
+[node name="speaking guy" type="Node2D" unique_id=1652893487]
+script = ExtResource("1_r20mc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1702196324]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=344256213]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.056640625, 0.13842773)
+texture = ExtResource("1_cfp6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1316989293]
+position = Vector2(-1, 8)
+shape = SubResource("CapsuleShape2D_r20mc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

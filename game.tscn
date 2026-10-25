@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://btljold7poymg" path="res://levels.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bpxpknuj0r6eg" path="res://game.gd" id="1_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://1yvvv2v87ww6" path="res://player.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://o1s50h70uc1y" path="res://dummy.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://1yvvv2v87ww6" path="res://characters/player.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://o1s50h70uc1y" path="res://characters/dummy.tscn" id="3_feb5d"]
 [ext_resource type="AudioStream" uid="uid://dd3a0dov58dou" path="res://music/tension.ogg" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://cf1sjq62h60w2" path="res://sprites/gui/bg.png" id="6_eow3j"]
-[ext_resource type="PackedScene" uid="uid://co4it1tv3ov44" path="res://inventory.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://x5eyw2tcsehy" path="res://systems/inventory.tscn" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://d4bw5d3vd5ar" path="res://sprites/gui/status_neutral.png" id="8_j5wjh"]
 
 [node name="Node2D" type="Node2D" unique_id=2043350443]

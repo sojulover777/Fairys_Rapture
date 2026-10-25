@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://x5eyw2tcsehy"]
+
+[ext_resource type="Script" uid="uid://bi0w5a2kd6pf1" path="res://systems/inventory.gd" id="1_8xn2g"]
+[ext_resource type="Texture2D" uid="uid://d2ncw5c2yoidb" path="res://sprites/gui/bg_inventory.png" id="2_2pjyi"]
+[ext_resource type="Texture2D" uid="uid://d33fkkmlwl8x2" path="res://sprites/gui/new_inventory_bg.png" id="3_dhhmk"]
+[ext_resource type="Texture2D" uid="uid://daf2lmr7bhk5i" path="res://sprites/items/bandage.png" id="3_qjyhv"]
+[ext_resource type="Texture2D" uid="uid://bpwe634ub7urd" path="res://sprites/items/chewing_gum.png" id="4_ormsd"]
+[ext_resource type="Texture2D" uid="uid://c1s6aekof6xs6" path="res://sprites/gui/nothing.png" id="5_qjyhv"]
+[ext_resource type="FontFile" uid="uid://phutmm5jf8rm" path="res://fonts/ClickClack.ttf" id="6_qjyhv"]
+[ext_resource type="FontFile" uid="uid://bvkfxbeanp283" path="res://fonts/18365.ttf" id="7_ormsd"]
+[ext_resource type="PackedScene" uid="uid://cj4xgg0rs18xi" path="res://systems/hp_bar.tscn" id="8_ormsd"]
+[ext_resource type="Texture2D" uid="uid://vd7ujurqkqx1" path="res://sprites/gui/status_inventory.png" id="10_4epum"]
+[ext_resource type="Texture2D" uid="uid://ckpr5eydk6w66" path="res://sprites/gui/cancel_inventory.png" id="11_kucie"]
+[ext_resource type="Texture2D" uid="uid://vw6j2iydyw8w" path="res://sprites/gui/use_inventory.png" id="12_8xn2g"]
+[ext_resource type="Texture2D" uid="uid://c6hn7wb3533b8" path="res://sprites/gui/cancel_inventory_prsd.png" id="12_b541n"]
+[ext_resource type="Texture2D" uid="uid://dal08h4mxxg3o" path="res://sprites/gui/cancel_inventory_h.png" id="13_n787p"]
+[ext_resource type="Texture2D" uid="uid://b0733s6nwfo4" path="res://sprites/gui/use_inventory_prsd.png" id="15_6a2vb"]
+[ext_resource type="Texture2D" uid="uid://o5oerbl6qny4" path="res://sprites/gui/use_inventory_h.png" id="16_t4mou"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qjyhv")
+}],
+"loop": 1,
+"name": &"bandage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ormsd")
+}],
+"loop": 1,
+"name": &"gum",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qjyhv")
+}],
+"loop": 1,
+"name": &"none",
+"speed": 5.0
+}]
+
+[node name="Inventory" type="Control" unique_id=1901818215]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.97, 0.97)
+script = ExtResource("1_8xn2g")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=161124832]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 404.0
+offset_right = 683.0
+offset_bottom = 693.0
+texture = ExtResource("2_2pjyi")
+
+[node name="item_bg" type="Sprite2D" parent="." unique_id=929400223]
+position = Vector2(1354.0001, 534.00006)
+scale = Vector2(1.055, 1.055)
+texture = ExtResource("3_dhhmk")
+
+[node name="item_pictures" type="AnimatedSprite2D" parent="item_bg" unique_id=1845740400]
+position = Vector2(304.49426, -195.50558)
+scale = Vector2(0.17977527, 0.17977527)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"none"
+
+[node name="Button" type="Button" parent="item_bg" unique_id=237961398]
+offset_left = 324.17056
+offset_top = -455.92432
+offset_right = 442.14804
+offset_bottom = -408.2614
+text = "add"
+
+[node name="descritpion" type="Label" parent="item_bg" unique_id=494905940]
+custom_minimum_size = Vector2(75, 0)
+offset_left = 191.46912
+offset_top = 52.80902
+offset_right = 456.87195
+offset_bottom = 325.11853
+theme_override_colors/font_color = Color(0.6226937, 0.4777431, 0.39742208, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_qjyhv")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="discription_label" type="Label" parent="item_bg/descritpion" unique_id=384051834]
+layout_mode = 0
+offset_left = -15.165868
+offset_top = -57.54841
+offset_right = 273.93387
+offset_bottom = -14.5484085
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_ormsd")
+theme_override_font_sizes/font_size = 35
+text = "Описание:"
+horizontal_alignment = 1
+
+[node name="items_label" type="Label" parent="item_bg/descritpion" unique_id=2090747376]
+layout_mode = 0
+offset_left = -349.16702
+offset_top = -510.1111
+offset_right = -5.1670227
+offset_bottom = -419.1111
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("7_ormsd")
+theme_override_font_sizes/font_size = 70
+text = "Предметы"
+
+[node name="HpBar" parent="item_bg" unique_id=1404779165 instance=ExtResource("8_ormsd")]
+offset_left = -1264.4551
+offset_top = -453.08066
+offset_right = -1264.4551
+offset_bottom = -453.08066
+scale = Vector2(0.58, 0.58)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="item_bg" unique_id=827128357]
+offset_left = -430.3319
+offset_top = -283.4124
+offset_right = 137.44067
+offset_bottom = 249.28912
+
+[node name="Stats_bg" type="Sprite2D" parent="." unique_id=560552657]
+position = Vector2(385.56702, 762.88654)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("10_4epum")
+
+[node name="Stats_text" type="Label" parent="Stats_bg" unique_id=233258990]
+offset_left = -216.49487
+offset_top = -71.22766
+offset_right = 221.18085
+offset_bottom = 154.63922
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.4627451)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 18
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("7_ormsd")
+theme_override_font_sizes/font_size = 28
+vertical_alignment = 1
+
+[node name="effects" type="Label" parent="." unique_id=479037267]
+layout_mode = 0
+offset_left = 276.28864
+offset_top = 581.4433
+offset_right = 497.28864
+offset_bottom = 641.0514
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("7_ormsd")
+theme_override_font_sizes/font_size = 45
+text = "Досье"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel_inventory" type="TextureButton" parent="." unique_id=1161706644]
+layout_mode = 0
+offset_left = 1391.0
+offset_top = 833.0
+offset_right = 1508.0
+offset_bottom = 902.0
+texture_normal = ExtResource("11_kucie")
+texture_pressed = ExtResource("12_b541n")
+texture_hover = ExtResource("13_n787p")
+
+[node name="Use_inventory" type="TextureButton" parent="." unique_id=1038995967]
+layout_mode = 0
+offset_left = 928.99994
+offset_top = 829.00006
+offset_right = 1312.0
+offset_bottom = 899.00006
+rotation = -0.008726646
+texture_normal = ExtResource("12_8xn2g")
+texture_pressed = ExtResource("15_6a2vb")
+texture_hover = ExtResource("16_t4mou")
+
+[connection signal="pressed" from="item_bg/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Cancel_inventory" to="." method="_on_cancel_inventory_pressed"]
+[connection signal="pressed" from="Use_inventory" to="." method="_on_use_inventory_pressed"]

@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://c5eovpubgs4xq"]
-
-[ext_resource type="Script" uid="uid://bui6yb82k0jdt" path="res://enemy_stuff.gd" id="1_ogmde"]
-
-[node name="Enemy_stuff" type="Control" unique_id=1699495589]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_ogmde")

@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="magical adventure in urban shitty locations (4.6)"
-run/main_scene="uid://sa08dvb6xoqb"
+run/main_scene="uid://kia4u8xh40yn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 CombatState="*uid://cnkhnxi1ewlob"
-EnemyStuff="*uid://bui6yb82k0jdt"
 
 [display]
 

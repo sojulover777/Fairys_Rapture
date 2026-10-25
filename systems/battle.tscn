@@ -1,0 +1,488 @@
+[gd_scene format=3 uid="uid://df3st5af81cr"]
+
+[ext_resource type="Shader" uid="uid://bk7ur80xs32hg" path="res://shaders/battle.gdshader" id="1_6ke21"]
+[ext_resource type="Script" uid="uid://b0arqqjuglw05" path="res://systems/battle.gd" id="1_dw4jg"]
+[ext_resource type="Texture2D" uid="uid://ckmwf30ob5uxh" path="res://sprites/gui/цирк уехал, а клоуны осталтись.jpg" id="2_rggsl"]
+[ext_resource type="PackedScene" uid="uid://csbbb5gx1eavb" path="res://systems/krutilka_2.tscn" id="3_6t8i5"]
+[ext_resource type="Texture2D" uid="uid://c4v26u3rudtpv" path="res://sprites/supports/vadim.png" id="4_s5g7e"]
+[ext_resource type="PackedScene" uid="uid://dld3j87y52fut" path="res://systems/krutilka_3.tscn" id="5_0npn6"]
+[ext_resource type="PackedScene" uid="uid://cj4xgg0rs18xi" path="res://systems/hp_bar.tscn" id="5_6t8i5"]
+[ext_resource type="Texture2D" uid="uid://dtbvwo612cn0o" path="res://sprites/LinLin_Fight.png" id="6_dw4jg"]
+[ext_resource type="Texture2D" uid="uid://ce0ff0c8b0l41" path="res://sprites/gui/Hp_bg.png" id="6_pihy1"]
+[ext_resource type="Texture2D" uid="uid://b1om45a3duvtd" path="res://sprites/enemies/pedotrump.png" id="7_aacmo"]
+[ext_resource type="Texture2D" uid="uid://i0n1bhgjje8s" path="res://sprites/idle1.png" id="8_bqoqy"]
+[ext_resource type="PackedScene" uid="uid://lbo8jse3vkrj" path="res://systems/battle_choice.tscn" id="8_lcjiy"]
+[ext_resource type="PackedScene" uid="uid://odq37nksg3mw" path="res://systems/turn_counter.tscn" id="8_mhv3b"]
+[ext_resource type="Texture2D" uid="uid://4y1m36nwnt2r" path="res://sprites/gui/krutilka/coolass_bg.png" id="8_sl0w2"]
+[ext_resource type="Texture2D" uid="uid://d14wgoyvd16fh" path="res://sprites/gui/status_bile.png" id="8_uefs0"]
+[ext_resource type="Texture2D" uid="uid://cf1sjq62h60w2" path="res://sprites/gui/bg.png" id="9_4s0ev"]
+[ext_resource type="Texture2D" uid="uid://cfqegojufbbpi" path="res://sprites/gui/status_blood.png" id="9_6ke21"]
+[ext_resource type="Texture2D" uid="uid://b0080lx0igws6" path="res://sprites/idle2.png" id="9_ptuo3"]
+[ext_resource type="Texture2D" uid="uid://d4bw5d3vd5ar" path="res://sprites/gui/status_neutral.png" id="10_2sop1"]
+[ext_resource type="Texture2D" uid="uid://cestwgegvqkud" path="res://sprites/gui/krutilka/heart_btn.png" id="10_elvfr"]
+[ext_resource type="Texture2D" uid="uid://c4u0vdr073p83" path="res://sprites/idle3.png" id="10_mrqp6"]
+[ext_resource type="Texture2D" uid="uid://b4k1dmp6v143k" path="res://sprites/gui/krutilka/heart_btn_p.png" id="11_4s0ev"]
+[ext_resource type="Texture2D" uid="uid://cksgecekyak8e" path="res://sprites/gui/status_fire.png" id="11_dnb8m"]
+[ext_resource type="Texture2D" uid="uid://bl4k17kndfqc8" path="res://sprites/idle4.png" id="11_goa8d"]
+[ext_resource type="Texture2D" uid="uid://ca0imrpdweuej" path="res://sprites/gui/status_metal.png" id="12_jw6nk"]
+[ext_resource type="Texture2D" uid="uid://bfd3or2yeq8mg" path="res://sprites/gui/krutilka/heart_btn_h.png" id="12_pihy1"]
+[ext_resource type="Texture2D" uid="uid://c72ghwkye18c6" path="res://sprites/gui/status_water.png" id="13_2n6th"]
+[ext_resource type="Texture2D" uid="uid://qyvb6ropvkfo" path="res://sprites/gui/krutilka/liltextbox.png" id="14_pihy1"]
+[ext_resource type="Texture2D" uid="uid://d341js16imqdx" path="res://sprites/gui/cancel.png" id="16_22sa7"]
+[ext_resource type="FontFile" uid="uid://bvkfxbeanp283" path="res://fonts/18365.ttf" id="16_slotg"]
+[ext_resource type="Texture2D" uid="uid://ckhiw2qunouej" path="res://sprites/gui/cancel_p.png" id="17_aacmo"]
+[ext_resource type="Texture2D" uid="uid://dsxv36pf000c7" path="res://sprites/gui/cancel_h.png" id="18_rggsl"]
+[ext_resource type="PackedScene" uid="uid://dtb1ls6mwkayj" path="res://systems/hp_bar_enemy.tscn" id="21_dnb8m"]
+[ext_resource type="AudioStream" uid="uid://b6aqsivgyoqlo" path="res://music/battle_theme.ogg" id="22_fljlq"]
+[ext_resource type="PackedScene" uid="uid://x5eyw2tcsehy" path="res://systems/inventory.tscn" id="24_j128n"]
+[ext_resource type="Texture2D" uid="uid://cy30tamhitnxu" path="res://sprites/gui/frame.png" id="25_nt5qs"]
+[ext_resource type="PackedScene" uid="uid://d2bivo0du1ey8" path="res://systems/krutilka.tscn" id="35_6pxrf"]
+[ext_resource type="Texture2D" uid="uid://y6vs1a6m63fb" path="res://sprites/gui/krutilka/elements.png" id="36_6g7go"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6haj"]
+shader = ExtResource("1_6ke21")
+shader_parameter/beat_speed = 2.0
+shader_parameter/flesh_color = Color(0.8, 0.1, 0.1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0wcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bqoqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ptuo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mrqp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_goa8d")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyxtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uefs0")
+}],
+"loop": 1,
+"name": &"bile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_6ke21")
+}],
+"loop": 1,
+"name": &"blood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dnb8m")
+}],
+"loop": 1,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jw6nk")
+}],
+"loop": 1,
+"name": &"metal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2sop1")
+}],
+"loop": 1,
+"name": &"neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2n6th")
+}],
+"loop": 1,
+"name": &"water",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wl1v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uefs0")
+}],
+"loop": 1,
+"name": &"bile",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_6ke21")
+}],
+"loop": 1,
+"name": &"blood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dnb8m")
+}],
+"loop": 1,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jw6nk")
+}],
+"loop": 1,
+"name": &"metal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2sop1")
+}],
+"loop": 1,
+"name": &"neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2n6th")
+}],
+"loop": 1,
+"name": &"water",
+"speed": 5.0
+}]
+
+[node name="battle" type="Node2D" unique_id=748157830]
+material = SubResource("ShaderMaterial_w6haj")
+script = ExtResource("1_dw4jg")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1967019740]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup" unique_id=1391961606]
+modulate = Color(0.22094142, 0.22094142, 0.22094142, 1)
+offset_left = -1.0
+offset_top = -619.0
+offset_right = 1923.0
+offset_bottom = 1081.0
+texture = ExtResource("2_rggsl")
+
+[node name="frame" type="TextureRect" parent="CanvasGroup" unique_id=355716490]
+modulate = Color(0.7, 0.7, 0.7, 1)
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("25_nt5qs")
+
+[node name="info_all" type="Control" parent="CanvasGroup" unique_id=846704540]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 670.0
+offset_top = 709.0
+offset_right = 1250.0
+offset_bottom = 1124.0
+
+[node name="info_bg" type="Sprite2D" parent="CanvasGroup/info_all" unique_id=485597215]
+position = Vector2(294, 170)
+scale = Vector2(0.50011086, 0.53194886)
+texture = ExtResource("14_pihy1")
+
+[node name="info" type="Label" parent="CanvasGroup/info_all/info_bg" unique_id=1075101286]
+offset_left = -403.53955
+offset_top = -86.72571
+offset_right = 415.92944
+offset_bottom = 171.6814
+theme_override_colors/font_color = Color(0.6666667, 0.58431375, 0.50980395, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.30588236)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("16_slotg")
+theme_override_font_sizes/font_size = 50
+text = "инфа"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="." unique_id=395939724]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = -5.0
+offset_right = 1922.0
+offset_bottom = 1075.0
+
+[node name="player" type="Node2D" parent="Control" unique_id=114588698]
+position = Vector2(-3, 5)
+
+[node name="support" type="Sprite2D" parent="Control/player" unique_id=719946685]
+position = Vector2(300, 619)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("4_s5g7e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/player" unique_id=2097518023]
+position = Vector2(717, 453)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_f0wcl")
+animation = &"idle"
+frame = 2
+frame_progress = 0.30200183
+
+[node name="HpBar" parent="Control/player" unique_id=1404779165 instance=ExtResource("5_6t8i5")]
+offset_left = 13.999939
+offset_top = 715.0
+offset_right = 13.999939
+offset_bottom = 715.0
+scale = Vector2(0.5, 0.48)
+
+[node name="status_sprite" type="AnimatedSprite2D" parent="Control/player/HpBar" unique_id=481953062]
+position = Vector2(842.0002, 506.25)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_xyxtk")
+animation = &"neutral"
+
+[node name="choice" parent="Control/player" unique_id=362874569 instance=ExtResource("8_lcjiy")]
+offset_left = 601.00006
+offset_top = 706.0
+offset_right = 601.00006
+offset_bottom = 706.0
+scale = Vector2(0.88501996, 0.88501996)
+
+[node name="Lin_Lin" type="Sprite2D" parent="Control/player" unique_id=549687724]
+visible = false
+position = Vector2(673, 400)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("6_dw4jg")
+
+[node name="enemy_hp2" type="Sprite2D" parent="Control/player" unique_id=1686675005]
+visible = false
+position = Vector2(1617, 880)
+scale = Vector2(0.28995374, 0.27734318)
+texture = ExtResource("6_pihy1")
+
+[node name="enemy_hp" type="Label" parent="Control/player" unique_id=351697417]
+visible = false
+offset_left = 1506.0
+offset_top = 834.0
+offset_right = 1743.0
+offset_bottom = 909.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pedobear" type="Sprite2D" parent="Control/player" unique_id=107954568]
+position = Vector2(1374, 440)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("7_aacmo")
+
+[node name="turn_counter" parent="Control/player" unique_id=1397050859 instance=ExtResource("8_mhv3b")]
+offset_left = 69.0
+offset_top = 52.00003
+offset_right = 69.0
+offset_bottom = 52.00003
+scale = Vector2(0.475, 0.475)
+
+[node name="hp_bar_enemy" parent="Control/player" unique_id=10430258 instance=ExtResource("21_dnb8m")]
+offset_left = 1320.0
+offset_top = 715.0
+offset_right = 1320.0
+offset_bottom = 715.0
+scale = Vector2(0.5, 0.48)
+
+[node name="Witchcraft_choice" type="Control" parent="." unique_id=1554822219]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1919.0
+offset_bottom = 1076.0
+
+[node name="CoolAssBG" type="Sprite2D" parent="Witchcraft_choice" unique_id=558905309]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(958.00006, 489.00003)
+scale = Vector2(0.491, 0.491)
+texture = ExtResource("8_sl0w2")
+
+[node name="TextureRect" type="TextureRect" parent="Witchcraft_choice/CoolAssBG" unique_id=671579821]
+modulate = Color(0.040268797, 0.040268805, 0.040268797, 1)
+offset_left = -2395.112
+offset_top = -1411.4053
+offset_right = 2484.7253
+offset_bottom = 1698.5745
+texture = ExtResource("9_4s0ev")
+
+[node name="liltextbox" type="Sprite2D" parent="Witchcraft_choice/CoolAssBG" unique_id=642481820]
+position = Vector2(-6.110199, 839.10394)
+scale = Vector2(1.0883182, 1.1712419)
+texture = ExtResource("14_pihy1")
+
+[node name="persize_damage" type="Label" parent="Witchcraft_choice/CoolAssBG/liltextbox" unique_id=213568301]
+anchors_preset = -1
+anchor_left = 0.016061684
+anchor_right = 0.07362193
+anchor_bottom = 0.38738233
+offset_left = -402.69604
+offset_top = -94.1947
+offset_right = -21.696045
+offset_bottom = -71.1947
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5176471)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("16_slotg")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="elements" type="TextureRect" parent="Witchcraft_choice/CoolAssBG/liltextbox" unique_id=1278346807]
+custom_minimum_size = Vector2(-1, -1)
+offset_left = 87.95509
+offset_top = -109.55015
+offset_right = 2237.0273
+offset_bottom = 1938.4498
+scale = Vector2(0.155, 0.155)
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 67.065)
+offset_transform_scale = Vector2(2.005, 2.005)
+texture = ExtResource("36_6g7go")
+
+[node name="ready_btn" type="TextureButton" parent="Witchcraft_choice/CoolAssBG" unique_id=644836471]
+light_mask = 2
+visibility_layer = 2
+offset_left = -211.81265
+offset_top = 338.0855
+offset_right = 188.18735
+offset_bottom = 618.0855
+offset_transform_position = Vector2(10, 0)
+texture_normal = ExtResource("10_elvfr")
+texture_pressed = ExtResource("11_4s0ev")
+texture_hover = ExtResource("12_pihy1")
+ignore_texture_size = true
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="krutilka2" parent="Witchcraft_choice/CoolAssBG" unique_id=2131407593 instance=ExtResource("3_6t8i5")]
+offset_left = -857.43396
+offset_top = -537.6783
+offset_right = -857.43396
+offset_bottom = -537.6783
+scale = Vector2(1.05, 1.05)
+
+[node name="krutilka3" parent="Witchcraft_choice/CoolAssBG" unique_id=172689009 instance=ExtResource("5_0npn6")]
+offset_left = -857.4339
+offset_top = -116.08965
+offset_right = -857.4339
+offset_bottom = -116.08965
+scale = Vector2(1.05, 1.05)
+
+[node name="cancel_button" type="TextureButton" parent="Witchcraft_choice/CoolAssBG" unique_id=625508746]
+offset_left = 1491.195
+offset_top = -890.02
+offset_right = 1741.195
+offset_bottom = -640.02
+texture_normal = ExtResource("16_22sa7")
+texture_pressed = ExtResource("17_aacmo")
+texture_hover = ExtResource("18_rggsl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="krutilka" parent="Witchcraft_choice/CoolAssBG" unique_id=1172203241 instance=ExtResource("35_6pxrf")]
+offset_left = -853.3607
+offset_top = -963.3402
+offset_right = -853.3607
+offset_bottom = -963.3402
+scale = Vector2(1.05, 1.05)
+
+[node name="timer" type="Node2D" parent="." unique_id=1963720635]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="timer" unique_id=1873608899]
+modulate = Color(0.040268797, 0.040268805, 0.040268797, 1)
+offset_left = -1009.0
+offset_top = -572.0
+offset_right = 2925.8267
+offset_bottom = 1649.9958
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.49, 0.49)
+texture = ExtResource("9_4s0ev")
+
+[node name="timer_label" type="Label" parent="timer" unique_id=13971663]
+offset_left = 2.0
+offset_right = 1925.0
+offset_bottom = 1084.0
+theme_override_colors/font_color = Color(0.75686276, 0.6627451, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 80
+theme_override_fonts/font = ExtResource("16_slotg")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXplayer" type="AudioStreamPlayer2D" parent="." unique_id=1639881840]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=964432958]
+stream = ExtResource("22_fljlq")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true
+
+[node name="inventory_control" type="Control" parent="." unique_id=530898937]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_right = 1926.0
+offset_bottom = 1076.0
+
+[node name="TextureRect" type="TextureRect" parent="inventory_control" unique_id=505977353]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -133.0
+offset_top = -136.0
+offset_right = 2078.0
+offset_bottom = 1168.0
+texture = ExtResource("9_4s0ev")
+
+[node name="TextureRect" type="TextureRect" parent="inventory_control/TextureRect" unique_id=646909369]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -6.0
+offset_top = -14.0
+offset_right = 2205.0
+offset_bottom = 1290.0
+texture = ExtResource("9_4s0ev")
+
+[node name="Inventory" parent="inventory_control" unique_id=1287183904 instance=ExtResource("24_j128n")]
+top_level = true
+clip_children = 1
+layout_mode = 0
+scale = Vector2(1.005, 1.005)
+
+[node name="status_sprite_inventory" type="AnimatedSprite2D" parent="inventory_control/Inventory" unique_id=184295325]
+position = Vector2(542.2886, 365.17413)
+scale = Vector2(1.135, 1.135)
+sprite_frames = SubResource("SpriteFrames_4wl1v")
+animation = &"neutral"
+
+[connection signal="pressed" from="Witchcraft_choice/CoolAssBG/ready_btn" to="." method="_on_ready_btn_pressed"]
+[connection signal="pressed" from="Witchcraft_choice/CoolAssBG/cancel_button" to="." method="_on_cancel_button_pressed"]

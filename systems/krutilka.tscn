@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://d2bivo0du1ey8"]
+
+[ext_resource type="Script" uid="uid://bdt08n57l18jl" path="res://systems/krutilka.gd" id="1_rrbya"]
+[ext_resource type="Texture2D" uid="uid://d2lfwfi3fflbr" path="res://sprites/gui/krutilka/krutilka.png" id="2_l3i61"]
+[ext_resource type="Texture2D" uid="uid://b5888ic5a1m6w" path="res://sprites/gui/krutilka/chbutton.png" id="3_ctckd"]
+[ext_resource type="Texture2D" uid="uid://dvxnrsgxf6wdg" path="res://sprites/gui/krutilka/chbutton_p.png" id="4_cv6n6"]
+[ext_resource type="Texture2D" uid="uid://dkjnqumnnr7ln" path="res://sprites/gui/krutilka/chbutton_h.png" id="5_mmpjy"]
+[ext_resource type="Texture2D" uid="uid://ul6dgp7vuxbb" path="res://sprites/gui/krutilka/boom_1.png" id="6_4r8oa"]
+[ext_resource type="Texture2D" uid="uid://cqs661xdmv80c" path="res://sprites/gui/krutilka/ball_1.png" id="7_8v8nt"]
+[ext_resource type="Texture2D" uid="uid://u0nnxv6hkbvg" path="res://sprites/gui/krutilka/bullet_1.png" id="8_f82uf"]
+[ext_resource type="Texture2D" uid="uid://cjs88m0yjwlpn" path="res://sprites/gui/krutilka/slice_1.png" id="9_8m5wp"]
+[ext_resource type="FontFile" uid="uid://bvkfxbeanp283" path="res://fonts/18365.ttf" id="10_8v8nt"]
+[ext_resource type="FontFile" uid="uid://phutmm5jf8rm" path="res://fonts/ClickClack.ttf" id="11_f82uf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4r8oa")
+}],
+"loop": 1,
+"name": &"Вердикт",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8v8nt")
+}],
+"loop": 1,
+"name": &"Догма",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f82uf")
+}],
+"loop": 1,
+"name": &"Клевета",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8m5wp")
+}],
+"loop": 1,
+"name": &"Надрез",
+"speed": 5.0
+}]
+
+[node name="krutilka" type="Control" unique_id=1172203241]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rrbya")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1707697987]
+position = Vector2(820, 196)
+texture = ExtResource("2_l3i61")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=977444257]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"Надрез"
+
+[node name="spell_name" type="Label" parent="Sprite2D" unique_id=588748532]
+offset_left = 336.0
+offset_top = -125.0
+offset_right = 741.0
+offset_bottom = -52.0
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("10_8v8nt")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spell_descritpion" type="Label" parent="Sprite2D/spell_name" unique_id=592836221]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 56.0
+offset_right = 426.0
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("11_f82uf")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="guide" type="Label" parent="Sprite2D" unique_id=1154112563]
+offset_left = -745.0
+offset_top = -123.0
+offset_right = -362.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.81960785, 0.63529414, 0.5372549, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("10_8v8nt")
+theme_override_font_sizes/font_size = 54
+text = "Заклинание"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="right_button1" type="TextureButton" parent="." unique_id=541152228]
+custom_minimum_size = Vector2(-100, -100)
+layout_mode = 0
+offset_left = 467.0
+offset_top = 24.0
+offset_right = 688.0
+offset_bottom = 379.0
+texture_normal = ExtResource("3_ctckd")
+texture_pressed = ExtResource("4_cv6n6")
+texture_hover = ExtResource("5_mmpjy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="left_button1" type="TextureButton" parent="." unique_id=1468940622]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 24.000015
+offset_right = 1165.0
+offset_bottom = 379.0
+texture_normal = ExtResource("3_ctckd")
+texture_pressed = ExtResource("4_cv6n6")
+texture_hover = ExtResource("5_mmpjy")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[connection signal="pressed" from="right_button1" to="." method="_on_right_button_1_pressed"]
+[connection signal="pressed" from="left_button1" to="." method="_on_left_button_1_pressed"]

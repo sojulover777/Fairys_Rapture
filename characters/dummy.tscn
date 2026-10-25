@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://o1s50h70uc1y"]
+
+[ext_resource type="Script" uid="uid://ce2r8bg5xee8d" path="res://characters/dummy.gd" id="1_xmspm"]
+[ext_resource type="Texture2D" uid="uid://b1om45a3duvtd" path="res://sprites/enemies/pedotrump.png" id="2_xmspm"]
+[ext_resource type="Texture2D" uid="uid://cwpym0sx2hcjq" path="res://sprites/enemies/pedobear 2.png" id="3_0umox"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1324b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xmspm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0umox")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xmspm"]
+radius = 31.0
+height = 130.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0umox"]
+radius = 28.0
+height = 122.0
+
+[node name="Area2D" type="Area2D" unique_id=485244594]
+script = ExtResource("1_xmspm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1479875365]
+position = Vector2(1, -4.999962)
+scale = Vector2(0.068, 0.069)
+sprite_frames = SubResource("SpriteFrames_1324b")
+frame_progress = 0.55574465
+
+[node name="Area2D" type="Area2D" parent="." unique_id=794417062]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1495155657]
+position = Vector2(0, 1.0000386)
+shape = SubResource("CapsuleShape2D_xmspm")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2066263470]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_0umox")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
