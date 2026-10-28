@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://sdkpm74wcclu"]
+
+[ext_resource type="Texture2D" uid="uid://bl6amfpvh3ef8" path="res://vfx/blood_vfx/effects/blood_droplets/frames/effect/010.png" id="1_sppat"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qgoa4"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_sppat"]
+offsets = PackedFloat32Array(0, 0.4918033, 0.90163934, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.55846345, 0.0053382176, 1.4439226e-07, 0.4862745, 0.37823159, 7.099286e-07, 2.1658838e-07, 0, 0.15686275, 0.043137256, 0.023529412, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sppat"]
+gradient = SubResource("Gradient_sppat")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_sppat"]
+_data = [Vector2(0.01351352, 0.50561804), 0.0, 0.0, 0, 0, Vector2(0.5405406, 0.8764045), 3.325842, 3.325842, 0, 0, Vector2(0.9797298, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lbyew"]
+curve = SubResource("Curve_sppat")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xyxtk"]
+particle_flag_disable_z = true
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 400.0
+initial_velocity_max = 800.0
+angular_velocity_min = -180.00002
+angular_velocity_max = 179.99998
+gravity = Vector3(0, 300, 0)
+tangential_accel_min = -180.0
+tangential_accel_max = 180.0
+damping_min = 30.000002
+damping_max = 60.000004
+scale_curve = SubResource("CurveTexture_lbyew")
+color_ramp = SubResource("GradientTexture1D_sppat")
+
+[node name="Blood" type="GPUParticles2D" unique_id=294210775]
+material = SubResource("CanvasItemMaterial_qgoa4")
+emitting = false
+amount = 10
+texture = ExtResource("1_sppat")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_xyxtk")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1156519458]

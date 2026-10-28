@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cdsaqxvl1c22f"]
+
+[ext_resource type="Texture2D" uid="uid://cj6xdgd8fbubo" path="res://vfx/blood_vfx/effects/blood_splash_medium/effect.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="a0_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 188, 179)
+
+[sub_resource type="AtlasTexture" id="a0_1"]
+atlas = ExtResource("1")
+region = Rect2(188, 0, 188, 179)
+
+[sub_resource type="AtlasTexture" id="a0_2"]
+atlas = ExtResource("1")
+region = Rect2(376, 0, 188, 179)
+
+[sub_resource type="AtlasTexture" id="a0_3"]
+atlas = ExtResource("1")
+region = Rect2(564, 0, 188, 179)
+
+[sub_resource type="AtlasTexture" id="a0_4"]
+atlas = ExtResource("1")
+region = Rect2(752, 0, 188, 179)
+
+[sub_resource type="AtlasTexture" id="a0_5"]
+atlas = ExtResource("1")
+region = Rect2(940, 0, 188, 179)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("a0_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_5")
+}],
+"loop": 0,
+"name": &"effect",
+"speed": 18.0
+}]

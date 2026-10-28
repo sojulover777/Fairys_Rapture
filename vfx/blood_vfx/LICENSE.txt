@@ -1,0 +1,24 @@
+LICENSE — Free Blood Splash by SovDigital
+
+Thank you for downloading.
+
+YOU MAY
+- Use these graphics in an unlimited number of personal and commercial games and
+  interactive projects, on any platform, including paid and free releases.
+- Modify, recolor, resize, cut apart and combine the graphics with your own work.
+- Share the graphics with team members and contractors working on the same project,
+  under these same terms.
+- Ship the graphics inside your compiled or packaged game files.
+Credit is appreciated but not required (for example "Characters by SovDigital").
+
+YOU MAY NOT
+- Resell, redistribute, sublicense or share the graphics, original or modified,
+  as stand-alone assets, sprite packs, templates or on asset stores, even for free.
+- Claim the graphics as your own original artwork.
+- Use the graphics to create or train machine-learning datasets or models.
+- Use the graphics in NFTs or similar tokenised collectibles.
+
+This license is granted to the purchaser and is not transferable. It does not expire.
+The graphics are provided "as is", without warranty of any kind.
+
+Questions: https://sovdigital.itch.io

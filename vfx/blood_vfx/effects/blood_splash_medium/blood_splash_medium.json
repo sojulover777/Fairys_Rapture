@@ -1,0 +1,35 @@
+{
+  "name": "blood splash medium",
+  "clips": {
+    "effect": {
+      "sheet": "effect.png",
+      "frame_size": [
+        188,
+        179
+      ],
+      "frames": 6,
+      "fps": 18,
+      "loop": false,
+      "pivot": [
+        75.0,
+        76.0
+      ]
+    },
+    "effect_smooth": {
+      "sheet": "effect_smooth.png",
+      "frame_size": [
+        188,
+        179
+      ],
+      "frames": 12,
+      "fps": 36,
+      "loop": false,
+      "pivot": [
+        75.0,
+        76.0
+      ],
+      "smooth_of": "effect"
+    }
+  },
+  "pivot_note": "Pivot is the centre point of the effect inside each frame (x, y in pixels)."
+}

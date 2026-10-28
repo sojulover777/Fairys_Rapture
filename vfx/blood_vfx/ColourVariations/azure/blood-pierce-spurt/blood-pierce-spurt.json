@@ -1,0 +1,23 @@
+{
+  "name": "blood pierce spurt (azure)",
+  "colour": "Azure",
+  "clips": {
+    "effect": {
+      "sheet": "effect.png",
+      "frame_size": [
+        320,
+        134
+      ],
+      "frames": 6,
+      "fps": 18,
+      "loop": false,
+      "pivot": [
+        37.0,
+        62.9
+      ],
+      "direction": "E",
+      "direction_note": "Travels toward E (to the right) from the pivot (the hit point); rotate the node to aim."
+    }
+  },
+  "pivot_note": "Pivot is the centre point of the effect inside each frame (x, y in pixels)."
+}

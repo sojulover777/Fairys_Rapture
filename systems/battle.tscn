@@ -10,29 +10,38 @@
 [ext_resource type="Texture2D" uid="uid://dtbvwo612cn0o" path="res://sprites/LinLin_Fight.png" id="6_dw4jg"]
 [ext_resource type="Texture2D" uid="uid://ce0ff0c8b0l41" path="res://sprites/gui/Hp_bg.png" id="6_pihy1"]
 [ext_resource type="Texture2D" uid="uid://b1om45a3duvtd" path="res://sprites/enemies/pedotrump.png" id="7_aacmo"]
-[ext_resource type="Texture2D" uid="uid://i0n1bhgjje8s" path="res://sprites/idle1.png" id="8_bqoqy"]
+[ext_resource type="Texture2D" uid="uid://jf3ks3qdpp4e" path="res://sprites/Lin_lin_battle_sprites/attack_2.png" id="8_it1mu"]
 [ext_resource type="PackedScene" uid="uid://lbo8jse3vkrj" path="res://systems/battle_choice.tscn" id="8_lcjiy"]
 [ext_resource type="PackedScene" uid="uid://odq37nksg3mw" path="res://systems/turn_counter.tscn" id="8_mhv3b"]
 [ext_resource type="Texture2D" uid="uid://4y1m36nwnt2r" path="res://sprites/gui/krutilka/coolass_bg.png" id="8_sl0w2"]
 [ext_resource type="Texture2D" uid="uid://d14wgoyvd16fh" path="res://sprites/gui/status_bile.png" id="8_uefs0"]
 [ext_resource type="Texture2D" uid="uid://cf1sjq62h60w2" path="res://sprites/gui/bg.png" id="9_4s0ev"]
 [ext_resource type="Texture2D" uid="uid://cfqegojufbbpi" path="res://sprites/gui/status_blood.png" id="9_6ke21"]
-[ext_resource type="Texture2D" uid="uid://b0080lx0igws6" path="res://sprites/idle2.png" id="9_ptuo3"]
+[ext_resource type="Texture2D" uid="uid://r8ugkgwmryim" path="res://sprites/Lin_lin_battle_sprites/attack_3.png" id="9_xfub4"]
 [ext_resource type="Texture2D" uid="uid://d4bw5d3vd5ar" path="res://sprites/gui/status_neutral.png" id="10_2sop1"]
 [ext_resource type="Texture2D" uid="uid://cestwgegvqkud" path="res://sprites/gui/krutilka/heart_btn.png" id="10_elvfr"]
-[ext_resource type="Texture2D" uid="uid://c4u0vdr073p83" path="res://sprites/idle3.png" id="10_mrqp6"]
+[ext_resource type="Texture2D" uid="uid://re3wrn8kputv" path="res://sprites/Lin_lin_battle_sprites/attack_4.png" id="10_htsfl"]
 [ext_resource type="Texture2D" uid="uid://b4k1dmp6v143k" path="res://sprites/gui/krutilka/heart_btn_p.png" id="11_4s0ev"]
+[ext_resource type="Texture2D" uid="uid://cikrjwakp2tmv" path="res://sprites/Lin_lin_battle_sprites/attack_5.png" id="11_8qugx"]
 [ext_resource type="Texture2D" uid="uid://cksgecekyak8e" path="res://sprites/gui/status_fire.png" id="11_dnb8m"]
-[ext_resource type="Texture2D" uid="uid://bl4k17kndfqc8" path="res://sprites/idle4.png" id="11_goa8d"]
 [ext_resource type="Texture2D" uid="uid://ca0imrpdweuej" path="res://sprites/gui/status_metal.png" id="12_jw6nk"]
 [ext_resource type="Texture2D" uid="uid://bfd3or2yeq8mg" path="res://sprites/gui/krutilka/heart_btn_h.png" id="12_pihy1"]
+[ext_resource type="Texture2D" uid="uid://c0xsneke5j36v" path="res://sprites/Lin_lin_battle_sprites/attack_6.png" id="12_t6rq4"]
 [ext_resource type="Texture2D" uid="uid://c72ghwkye18c6" path="res://sprites/gui/status_water.png" id="13_2n6th"]
+[ext_resource type="Texture2D" uid="uid://xth5tib7t37g" path="res://sprites/Lin_lin_battle_sprites/damage_1.png" id="13_2s467"]
+[ext_resource type="Texture2D" uid="uid://cfh4lmsqs4hrr" path="res://sprites/Lin_lin_battle_sprites/damage_3.png" id="14_3uyv6"]
 [ext_resource type="Texture2D" uid="uid://qyvb6ropvkfo" path="res://sprites/gui/krutilka/liltextbox.png" id="14_pihy1"]
+[ext_resource type="Texture2D" uid="uid://ctxys0aetl6rj" path="res://sprites/Lin_lin_battle_sprites/damage_4.png" id="15_ba8eb"]
 [ext_resource type="Texture2D" uid="uid://d341js16imqdx" path="res://sprites/gui/cancel.png" id="16_22sa7"]
 [ext_resource type="FontFile" uid="uid://bvkfxbeanp283" path="res://fonts/18365.ttf" id="16_slotg"]
 [ext_resource type="Texture2D" uid="uid://ckhiw2qunouej" path="res://sprites/gui/cancel_p.png" id="17_aacmo"]
+[ext_resource type="Texture2D" uid="uid://cfha0r73jo6t0" path="res://sprites/Lin_lin_battle_sprites/damage_7.png" id="17_i6nfp"]
+[ext_resource type="Texture2D" uid="uid://b7vps24pvm362" path="res://sprites/Lin_lin_battle_sprites/idle_1.png" id="18_5mwb3"]
 [ext_resource type="Texture2D" uid="uid://dsxv36pf000c7" path="res://sprites/gui/cancel_h.png" id="18_rggsl"]
+[ext_resource type="Texture2D" uid="uid://c5dwlc5rugols" path="res://sprites/Lin_lin_battle_sprites/idle_2.png" id="19_kyo82"]
+[ext_resource type="Texture2D" uid="uid://jt2vtik25e1f" path="res://sprites/Lin_lin_battle_sprites/idle_3.png" id="20_hjt21"]
 [ext_resource type="PackedScene" uid="uid://dtb1ls6mwkayj" path="res://systems/hp_bar_enemy.tscn" id="21_dnb8m"]
+[ext_resource type="Texture2D" uid="uid://dyj7j7h50spyp" path="res://sprites/Lin_lin_battle_sprites/idle_4.png" id="21_r75m2"]
 [ext_resource type="AudioStream" uid="uid://b6aqsivgyoqlo" path="res://music/battle_theme.ogg" id="22_fljlq"]
 [ext_resource type="PackedScene" uid="uid://x5eyw2tcsehy" path="res://systems/inventory.tscn" id="24_j128n"]
 [ext_resource type="Texture2D" uid="uid://cy30tamhitnxu" path="res://sprites/gui/frame.png" id="25_nt5qs"]
@@ -41,23 +50,71 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w6haj"]
 shader = ExtResource("1_6ke21")
-shader_parameter/beat_speed = 2.0
-shader_parameter/flesh_color = Color(0.8, 0.1, 0.1, 1)
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sk5d8"]
+shader = ExtResource("1_6ke21")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f0wcl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_bqoqy")
+"texture": ExtResource("8_it1mu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ptuo3")
+"texture": ExtResource("9_xfub4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_mrqp6")
+"texture": ExtResource("10_htsfl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_goa8d")
+"texture": ExtResource("11_8qugx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t6rq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t6rq4")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2s467")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3uyv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ba8eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i6nfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i6nfp")
+}],
+"loop": 1,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_5mwb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kyo82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hjt21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r75m2")
 }],
 "loop": 1,
 "name": &"idle",
@@ -114,6 +171,11 @@ animations = [{
 "name": &"water",
 "speed": 5.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_it1mu"]
+shader = ExtResource("1_6ke21")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4wl1v"]
 animations = [{
@@ -235,12 +297,12 @@ scale = Vector2(0.255, 0.255)
 texture = ExtResource("4_s5g7e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/player" unique_id=2097518023]
-position = Vector2(717, 453)
+material = SubResource("ShaderMaterial_sk5d8")
+position = Vector2(628, 454)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_f0wcl")
 animation = &"idle"
-frame = 2
-frame_progress = 0.30200183
+offset = Vector2(280, 0)
 
 [node name="HpBar" parent="Control/player" unique_id=1404779165 instance=ExtResource("5_6t8i5")]
 offset_left = 13.999939
@@ -285,6 +347,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="pedobear" type="Sprite2D" parent="Control/player" unique_id=107954568]
+material = SubResource("ShaderMaterial_it1mu")
 position = Vector2(1374, 440)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("7_aacmo")

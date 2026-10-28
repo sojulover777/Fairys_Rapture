@@ -1,0 +1,35 @@
+{
+  "name": "blood droplets",
+  "clips": {
+    "effect": {
+      "sheet": "effect.png",
+      "frame_size": [
+        203,
+        170
+      ],
+      "frames": 18,
+      "fps": 18,
+      "loop": false,
+      "pivot": [
+        84.0,
+        119.0
+      ]
+    },
+    "effect_smooth": {
+      "sheet": "effect_smooth.png",
+      "frame_size": [
+        203,
+        170
+      ],
+      "frames": 36,
+      "fps": 36,
+      "loop": false,
+      "pivot": [
+        84.0,
+        119.0
+      ],
+      "smooth_of": "effect"
+    }
+  },
+  "pivot_note": "Pivot is the centre point of the effect inside each frame (x, y in pixels)."
+}

@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3]
+
+[ext_resource type="Texture2D" path="../effect.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="a0_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 320, 134)
+
+[sub_resource type="AtlasTexture" id="a0_1"]
+atlas = ExtResource("1")
+region = Rect2(320, 0, 320, 134)
+
+[sub_resource type="AtlasTexture" id="a0_2"]
+atlas = ExtResource("1")
+region = Rect2(640, 0, 320, 134)
+
+[sub_resource type="AtlasTexture" id="a0_3"]
+atlas = ExtResource("1")
+region = Rect2(960, 0, 320, 134)
+
+[sub_resource type="AtlasTexture" id="a0_4"]
+atlas = ExtResource("1")
+region = Rect2(1280, 0, 320, 134)
+
+[sub_resource type="AtlasTexture" id="a0_5"]
+atlas = ExtResource("1")
+region = Rect2(1600, 0, 320, 134)
+
+[resource]
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("a0_0")}, {"duration": 1.0, "texture": SubResource("a0_1")}, {"duration": 1.0, "texture": SubResource("a0_2")}, {"duration": 1.0, "texture": SubResource("a0_3")}, {"duration": 1.0, "texture": SubResource("a0_4")}, {"duration": 1.0, "texture": SubResource("a0_5")}], "loop": false, "name": &"effect", "speed": 18.0}]

@@ -1,0 +1,137 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ccfhidg76qvfe"]
+
+[ext_resource type="Texture2D" uid="uid://b3xjuvee52xwn" path="res://vfx/blood_vfx/effects/blood_droplets/effect.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="a0_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_1"]
+atlas = ExtResource("1")
+region = Rect2(203, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_2"]
+atlas = ExtResource("1")
+region = Rect2(406, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_3"]
+atlas = ExtResource("1")
+region = Rect2(609, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_4"]
+atlas = ExtResource("1")
+region = Rect2(812, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_5"]
+atlas = ExtResource("1")
+region = Rect2(1015, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_6"]
+atlas = ExtResource("1")
+region = Rect2(1218, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_7"]
+atlas = ExtResource("1")
+region = Rect2(1421, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_8"]
+atlas = ExtResource("1")
+region = Rect2(1624, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_9"]
+atlas = ExtResource("1")
+region = Rect2(1827, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_10"]
+atlas = ExtResource("1")
+region = Rect2(2030, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_11"]
+atlas = ExtResource("1")
+region = Rect2(2233, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_12"]
+atlas = ExtResource("1")
+region = Rect2(2436, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_13"]
+atlas = ExtResource("1")
+region = Rect2(2639, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_14"]
+atlas = ExtResource("1")
+region = Rect2(2842, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_15"]
+atlas = ExtResource("1")
+region = Rect2(3045, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_16"]
+atlas = ExtResource("1")
+region = Rect2(3248, 0, 203, 170)
+
+[sub_resource type="AtlasTexture" id="a0_17"]
+atlas = ExtResource("1")
+region = Rect2(3451, 0, 203, 170)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("a0_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_11")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_12")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_13")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_14")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_15")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_16")
+}, {
+"duration": 1.0,
+"texture": SubResource("a0_17")
+}],
+"loop": 0,
+"name": &"effect",
+"speed": 24.0
+}]
